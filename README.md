@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/Rebilly/money/badge.svg?branch=master)](https://coveralls.io/github/Rebilly/money?branch=master)
+
 # Money
 
 [Value Object](http://martinfowler.com/bliki/ValueObject.html) that represents a [monetary value using a currency's smallest unit](http://martinfowler.com/eaaCatalog/money.html).  This library is originally based on Sebastian Bergmann's [discontinued library](https://github.com/sebastianbergmann/money).  It's been updated with support added for currency exchange.
