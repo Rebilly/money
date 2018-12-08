@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/6.4/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         failOnRisky="true"
+         failOnWarning="true"
+         beStrictAboutChangesToGlobalState="true"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutResourceUsageDuringSmallTests="true"
+         backupGlobals="true"
+         verbose="true">
+    <testsuites>
+        <testsuite name="default">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+        </whitelist>
+    </filter>
+
+    <php>
+        <ini name="error_reporting" value="-1" />
+
+        <const name="PHPUNIT_TESTSUITE" value="true"/>
+    </php>
+</phpunit>

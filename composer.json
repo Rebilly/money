@@ -1,0 +1,44 @@
+{
+  "name": "rebilly/money",
+  "description": "Implementation of the Money Value Object",
+  "license": "MIT",
+  "keywords": ["money", "currency"],
+  "homepage": "https://github.com/rebilly/money/",
+  "authors": [
+    {
+      "name": "Rebilly",
+      "homepage": "https://github.com/rebilly"
+    }
+  ],
+  "minimum-stability": "stable",
+
+  "require": {
+    "php": "^7.1",
+    "ext-json": "*"
+  },
+
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.8",
+    "phpunit/phpunit": "^7.5"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "Money\\": ["src"]
+    }
+  },
+
+  "autoload-dev": {
+    "psr-4": {
+      "Money\\": ["tests"]
+    }
+  },
+
+  "suggest": {},
+
+  "scripts": {
+    "cs": "php-cs-fixer fix --verbose --dry-run --ansi",
+    "cs-fix": "php-cs-fixer fix --verbose --ansi",
+    "test": "phpunit"
+  }
+}
