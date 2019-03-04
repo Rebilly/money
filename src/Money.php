@@ -167,7 +167,7 @@ final class Money implements JsonSerializable
     {
         $currencySign = $this->getCurrency()->getSign();
         $formattedAmount = ltrim($this->getFormattedAmount($decimalPoint, $thousandsSeparator), '-');
-        $amountSign = $this->isNegative() ? '-':'';
+        $amountSign = $this->isNegative() ? '-' : '';
 
         return "{$amountSign}{$currencySign}{$formattedAmount}";
     }
