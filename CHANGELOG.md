@@ -18,6 +18,11 @@ Security - in case of vulnerabilities.
 
 _TBD_
 
+## 1.0.1 (2019-03-05)
+
+### Fixed
++ Fixed pretty-print formatting of negative amount of money
+
 ## 1.0.0 (2018-12-08)
 
 Initial Release

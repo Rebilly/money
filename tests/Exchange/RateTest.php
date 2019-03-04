@@ -15,13 +15,13 @@ class RateTest extends TestCase
     {
         $cp = new CurrencyPair(new Currency('USD'), new Currency('EUR'));
         $this->expectException(InvalidArgumentException::class);
-        new Rate($cp, new DateTime(), 0);
+        new Rate($cp, $this->getRateDate(), 0);
     }
 
     public function testCanBeConstructed()
     {
         $cp = new CurrencyPair(new Currency('USD'), new Currency('EUR'));
-        $rate = new Rate($cp, new DateTime(), 0.92);
+        $rate = new Rate($cp, $this->getRateDate(), 0.92);
 
         $this->assertInstanceOf(Rate::class, $rate);
 
@@ -36,7 +36,7 @@ class RateTest extends TestCase
     public function testCanBeSerialized(Rate $rate): void
     {
         $this->assertSame(
-            '{"baseCurrency":"USD","quoteCurrency":"EUR","date":"' . date('c') . '","ratio":0.92}',
+            '{"baseCurrency":"USD","quoteCurrency":"EUR","date":"' . $this->getRateDate()->format('c') . '","ratio":0.92}',
             json_encode($rate)
         );
     }
@@ -111,5 +111,10 @@ class RateTest extends TestCase
         // the straight conversion without markup is EUR 9.20
         $this->assertSame(966, $newMoney->getAmount());
         $this->assertSame('EUR', $newMoney->getCurrency()->getCurrencyCode());
+    }
+
+    private function getRateDate(): DateTime
+    {
+        return new DateTime('2019-03-05 13:32');
     }
 }

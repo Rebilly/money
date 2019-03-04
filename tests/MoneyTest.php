@@ -113,6 +113,13 @@ class MoneyTest extends TestCase
         $this->assertSame('€1,200.34', $m->getPrettyPrint('.', ','));
     }
 
+    public function testFormattedNegativeAmountCanBeRetrieved(): void
+    {
+        $m = new Money(-120034, new Currency('EUR'));
+        $this->assertSame('-1 200.34', $m->getFormattedAmount('.', ' '));
+        $this->assertSame('-€1,200.34', $m->getPrettyPrint('.', ','));
+    }
+
     /**
      * @depends testObjectCanBeConstructedFromIntegerValueAndCurrencyObject
      *
