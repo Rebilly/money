@@ -187,10 +187,10 @@ final class Currency implements JsonSerializable
             'sub_unit' => 100,
             'sign' => 'P',
         ],
-        'BYR' => [
+        'BYN' => [
             'display_name' => 'Belarussian Ruble',
-            'numeric_code' => 974,
-            'default_fraction_digits' => 0,
+            'numeric_code' => 933,
+            'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Br',
         ],
@@ -628,20 +628,6 @@ final class Currency implements JsonSerializable
             'sub_unit' => 100,
             'sign' => 'L',
         ],
-        'LTL' => [
-            'display_name' => 'Lithuanian Litas',
-            'numeric_code' => 440,
-            'default_fraction_digits' => 2,
-            'sub_unit' => 100,
-            'sign' => 'Lt',
-        ],
-        'LVL' => [
-            'display_name' => 'Latvian Lats',
-            'numeric_code' => 428,
-            'default_fraction_digits' => 2,
-            'sub_unit' => 100,
-            'sign' => 'Ls',
-        ],
         'LYD' => [
             'display_name' => 'Libyan Dinar',
             'numeric_code' => 434,
@@ -698,9 +684,9 @@ final class Currency implements JsonSerializable
             'sub_unit' => 100,
             'sign' => 'P',
         ],
-        'MRO' => [
+        'MRU' => [
             'display_name' => 'Ouguiya',
-            'numeric_code' => 478,
+            'numeric_code' => 929,
             'default_fraction_digits' => 2,
             'sub_unit' => 5,
             'sign' => 'UM',
@@ -964,9 +950,9 @@ final class Currency implements JsonSerializable
             'sub_unit' => 100,
             'sign' => '£',
         ],
-        'STD' => [
+        'STN' => [
             'display_name' => 'Dobra',
-            'numeric_code' => 678,
+            'numeric_code' => 930,
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Db',
@@ -1083,13 +1069,6 @@ final class Currency implements JsonSerializable
             'sub_unit' => 100,
             'sign' => '$',
         ],
-        'USS' => [
-            'display_name' => 'US Dollar (Same day)',
-            'numeric_code' => 998,
-            'default_fraction_digits' => 2,
-            'sub_unit' => 100,
-            'sign' => '$',
-        ],
         'UYI' => [
             'display_name' => 'Uruguay Peso en Unidades Indexadas (URUIURUI)',
             'numeric_code' => 940,
@@ -1104,6 +1083,13 @@ final class Currency implements JsonSerializable
             'sub_unit' => 100,
             'sign' => '$U',
         ],
+        'UYW' => [
+            'display_name' => 'Unidad Previsional',
+            'numeric_code' => 927,
+            'default_fraction_digits' => 4,
+            'sub_unit' => 10000,
+            'sign' => 'UP',
+        ],
         'UZS' => [
             'display_name' => 'Uzbekistan Sum',
             'numeric_code' => 860,
@@ -1111,12 +1097,12 @@ final class Currency implements JsonSerializable
             'sub_unit' => 100,
             'sign' => 's\'om',
         ],
-        'VEF' => [
-            'display_name' => 'Bolivar',
-            'numeric_code' => 937,
+        'VES' => [
+            'display_name' => 'Bolivar Soberano',
+            'numeric_code' => 928,
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
-            'sign' => 'Bs.F.',
+            'sign' => 'Bs.S.',
         ],
         'VND' => [
             'display_name' => 'Dong',
@@ -1201,13 +1187,6 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'XDR',
-        ],
-        'XFU' => [
-            'display_name' => 'UIC-Franc',
-            'numeric_code' => 958,
-            'default_fraction_digits' => 0,
-            'sub_unit' => 100,
-            'sign' => 'XFU',
         ],
         'XOF' => [
             'display_name' => 'CFA Franc BCEAO',
