@@ -187,6 +187,14 @@ final class Currency implements JsonSerializable
             'sub_unit' => 100,
             'sign' => 'P',
         ],
+        'BYR' => [
+            'display_name' => 'Belarussian Ruble',
+            'numeric_code' => 974,
+            'default_fraction_digits' => 0,
+            'sub_unit' => 100,
+            'sign' => 'Br',
+            'deprecated' => true,
+        ],
         'BYN' => [
             'display_name' => 'Belarussian Ruble',
             'numeric_code' => 933,
@@ -628,6 +636,22 @@ final class Currency implements JsonSerializable
             'sub_unit' => 100,
             'sign' => 'L',
         ],
+        'LTL' => [
+            'display_name' => 'Lithuanian Litas',
+            'numeric_code' => 440,
+            'default_fraction_digits' => 2,
+            'sub_unit' => 100,
+            'sign' => 'Lt',
+            'deprecated' => true,
+        ],
+        'LVL' => [
+            'display_name' => 'Latvian Lats',
+            'numeric_code' => 428,
+            'default_fraction_digits' => 2,
+            'sub_unit' => 100,
+            'sign' => 'Ls',
+            'deprecated' => true,
+        ],
         'LYD' => [
             'display_name' => 'Libyan Dinar',
             'numeric_code' => 434,
@@ -690,6 +714,14 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 5,
             'sign' => 'UM',
+        ],
+        'MRO' => [
+            'display_name' => 'Ouguiya',
+            'numeric_code' => 478,
+            'default_fraction_digits' => 2,
+            'sub_unit' => 5,
+            'sign' => 'UM',
+            'deprecated' => true,
         ],
         'MUR' => [
             'display_name' => 'Mauritius Rupee',
@@ -957,6 +989,14 @@ final class Currency implements JsonSerializable
             'sub_unit' => 100,
             'sign' => 'Db',
         ],
+        'STD' => [
+            'display_name' => 'Dobra',
+            'numeric_code' => 678,
+            'default_fraction_digits' => 2,
+            'sub_unit' => 100,
+            'sign' => 'Db',
+            'deprecated' => true,
+        ],
         'SVC' => [
             'display_name' => 'El Salvador Colon',
             'numeric_code' => 222,
@@ -1069,6 +1109,14 @@ final class Currency implements JsonSerializable
             'sub_unit' => 100,
             'sign' => '$',
         ],
+        'USS' => [
+            'display_name' => 'US Dollar (Same day)',
+            'numeric_code' => 998,
+            'default_fraction_digits' => 2,
+            'sub_unit' => 100,
+            'sign' => '$',
+            'deprecated' => true,
+        ],
         'UYI' => [
             'display_name' => 'Uruguay Peso en Unidades Indexadas (URUIURUI)',
             'numeric_code' => 940,
@@ -1103,6 +1151,14 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Bs.S.',
+        ],
+        'VEF' => [
+            'display_name' => 'Bolivar',
+            'numeric_code' => 937,
+            'default_fraction_digits' => 2,
+            'sub_unit' => 100,
+            'sign' => 'Bs.F.',
+            'deprecated' => true,
         ],
         'VND' => [
             'display_name' => 'Dong',
@@ -1187,6 +1243,14 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'XDR',
+        ],
+        'XFU' => [
+            'display_name' => 'UIC-Franc',
+            'numeric_code' => 958,
+            'default_fraction_digits' => 0,
+            'sub_unit' => 100,
+            'sign' => 'XFU',
+            'deprecated' => true,
         ],
         'XOF' => [
             'display_name' => 'CFA Franc BCEAO',
@@ -1304,8 +1368,8 @@ final class Currency implements JsonSerializable
     {
         /** @var string[] $map */
         $map = array_combine(
-            array_column(self::getCurrencies(), 'numeric_code'),
-            array_keys(self::getCurrencies())
+            array_column(self::getCurrenciesIncludingDeprecated(), 'numeric_code'),
+            array_keys(self::getCurrenciesIncludingDeprecated())
         );
 
         if (!isset($map[$code])) {
@@ -1325,7 +1389,28 @@ final class Currency implements JsonSerializable
         ];
     }
 
+    /**
+     * Return only active currencies
+     *
+     * @return array
+     */
     public static function getCurrencies(): array
+    {
+        return array_filter(
+            self::$currencies,
+            function ($currencyCode) {
+                return !(new Currency($currencyCode))->isDeprecated();
+            },
+            ARRAY_FILTER_USE_KEY
+        );
+    }
+
+    /**
+     * Return all currencies: active and deprecated
+     *
+     * @return array
+     */
+    public static function getCurrenciesIncludingDeprecated(): array
     {
         return self::$currencies;
     }
@@ -1389,6 +1474,16 @@ final class Currency implements JsonSerializable
     public function getSign(): string
     {
         return self::$currencies[$this->getCurrencyCode()]['sign'];
+    }
+
+    /**
+     * Returns the deprecation status.
+     *
+     * @return bool
+     */
+    public function isDeprecated(): bool
+    {
+        return self::$currencies[$this->getCurrencyCode()]['deprecated'] ?? false;
     }
 
     /**
