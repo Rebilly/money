@@ -25,6 +25,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'د.إ',
+            'deprecated' => false,
         ],
         'AFN' => [
             'display_name' => 'Afghani',
@@ -32,6 +33,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '؋',
+            'deprecated' => false,
         ],
         'ALL' => [
             'display_name' => 'Lek',
@@ -39,6 +41,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'L',
+            'deprecated' => false,
         ],
         'AMD' => [
             'display_name' => 'Armenian Dram',
@@ -46,6 +49,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '֏',
+            'deprecated' => false,
         ],
         'ANG' => [
             'display_name' => 'Netherlands Antillean Guilder',
@@ -53,6 +57,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'ƒ',
+            'deprecated' => false,
         ],
         'AOA' => [
             'display_name' => 'Kwanza',
@@ -60,6 +65,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Kz',
+            'deprecated' => false,
         ],
         'ARS' => [
             'display_name' => 'Argentine Peso',
@@ -67,6 +73,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'AUD' => [
             'display_name' => 'Australian Dollar',
@@ -74,6 +81,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'AWG' => [
             'display_name' => 'Aruban Florin',
@@ -81,6 +89,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'ƒ',
+            'deprecated' => false,
         ],
         'AZN' => [
             'display_name' => 'Azerbaijanian Manat',
@@ -88,6 +97,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'm',
+            'deprecated' => false,
         ],
         'BAM' => [
             'display_name' => 'Convertible Mark',
@@ -95,6 +105,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'KM',
+            'deprecated' => false,
         ],
         'BBD' => [
             'display_name' => 'Barbados Dollar',
@@ -102,6 +113,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'BDT' => [
             'display_name' => 'Taka',
@@ -109,6 +121,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '৳',
+            'deprecated' => false,
         ],
         'BGN' => [
             'display_name' => 'Bulgarian Lev',
@@ -116,6 +129,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'лв',
+            'deprecated' => false,
         ],
         'BHD' => [
             'display_name' => 'Bahraini Dinar',
@@ -123,6 +137,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 3,
             'sub_unit' => 1000,
             'sign' => '.د.ب',
+            'deprecated' => false,
         ],
         'BIF' => [
             'display_name' => 'Burundi Franc',
@@ -130,6 +145,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'FBu',
+            'deprecated' => false,
         ],
         'BMD' => [
             'display_name' => 'Bermudian Dollar',
@@ -137,6 +153,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'BND' => [
             'display_name' => 'Brunei Dollar',
@@ -144,6 +161,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'BOB' => [
             'display_name' => 'Boliviano',
@@ -151,6 +169,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$b',
+            'deprecated' => false,
         ],
         'BOV' => [
             'display_name' => 'Mvdol',
@@ -158,6 +177,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'BOV',
+            'deprecated' => false,
         ],
         'BRL' => [
             'display_name' => 'Brazilian Real',
@@ -165,6 +185,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'R$',
+            'deprecated' => false,
         ],
         'BSD' => [
             'display_name' => 'Bahamian Dollar',
@@ -172,6 +193,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'BTN' => [
             'display_name' => 'Ngultrum',
@@ -179,6 +201,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Nu.',
+            'deprecated' => false,
         ],
         'BWP' => [
             'display_name' => 'Pula',
@@ -186,6 +209,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'P',
+            'deprecated' => false,
         ],
         'BYR' => [
             'display_name' => 'Belarussian Ruble',
@@ -201,6 +225,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Br',
+            'deprecated' => false,
         ],
         'BZD' => [
             'display_name' => 'Belize Dollar',
@@ -208,6 +233,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'CAD' => [
             'display_name' => 'Canadian Dollar',
@@ -215,6 +241,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'CDF' => [
             'display_name' => 'Congolese Franc',
@@ -222,6 +249,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'FC',
+            'deprecated' => false,
         ],
         'CHE' => [
             'display_name' => 'WIR Euro',
@@ -229,6 +257,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'CHE',
+            'deprecated' => false,
         ],
         'CHF' => [
             'display_name' => 'Swiss Franc',
@@ -236,6 +265,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'CHF',
+            'deprecated' => false,
         ],
         'CHW' => [
             'display_name' => 'WIR Franc',
@@ -243,6 +273,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'CHW',
+            'deprecated' => false,
         ],
         'CLF' => [
             'display_name' => 'Unidades de fomento',
@@ -250,6 +281,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'UF',
+            'deprecated' => false,
         ],
         'CLP' => [
             'display_name' => 'Chilean Peso',
@@ -257,6 +289,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'CNY' => [
             'display_name' => 'Yuan Renminbi',
@@ -264,6 +297,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '¥',
+            'deprecated' => false,
         ],
         'COP' => [
             'display_name' => 'Colombian Peso',
@@ -271,6 +305,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'COU' => [
             'display_name' => 'Unidad de Valor Real',
@@ -278,6 +313,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'COU',
+            'deprecated' => false,
         ],
         'CRC' => [
             'display_name' => 'Costa Rican Colon',
@@ -285,6 +321,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₡',
+            'deprecated' => false,
         ],
         'CUC' => [
             'display_name' => 'Peso Convertible',
@@ -292,6 +329,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'CUP' => [
             'display_name' => 'Cuban Peso',
@@ -299,6 +337,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₱',
+            'deprecated' => false,
         ],
         'CVE' => [
             'display_name' => 'Cape Verde Escudo',
@@ -306,6 +345,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'CZK' => [
             'display_name' => 'Czech Koruna',
@@ -313,6 +353,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Kč',
+            'deprecated' => false,
         ],
         'DJF' => [
             'display_name' => 'Djibouti Franc',
@@ -320,6 +361,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'Fdj',
+            'deprecated' => false,
         ],
         'DKK' => [
             'display_name' => 'Danish Krone',
@@ -327,6 +369,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'kr.',
+            'deprecated' => false,
         ],
         'DOP' => [
             'display_name' => 'Dominican Peso',
@@ -334,6 +377,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'RD$',
+            'deprecated' => false,
         ],
         'DZD' => [
             'display_name' => 'Algerian Dinar',
@@ -341,6 +385,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'دج',
+            'deprecated' => false,
         ],
         'EGP' => [
             'display_name' => 'Egyptian Pound',
@@ -348,6 +393,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '£',
+            'deprecated' => false,
         ],
         'ERN' => [
             'display_name' => 'Nakfa',
@@ -355,6 +401,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Nfk',
+            'deprecated' => false,
         ],
         'ETB' => [
             'display_name' => 'Ethiopian Birr',
@@ -362,6 +409,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Br',
+            'deprecated' => false,
         ],
         'EUR' => [
             'display_name' => 'Euro',
@@ -369,6 +417,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '€',
+            'deprecated' => false,
         ],
         'FJD' => [
             'display_name' => 'Fiji Dollar',
@@ -376,6 +425,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'FKP' => [
             'display_name' => 'Falkland Islands Pound',
@@ -383,6 +433,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '£',
+            'deprecated' => false,
         ],
         'GBP' => [
             'display_name' => 'Pound Sterling',
@@ -390,6 +441,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '£',
+            'deprecated' => false,
         ],
         'GEL' => [
             'display_name' => 'Lari',
@@ -397,6 +449,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'ლ',
+            'deprecated' => false,
         ],
         'GHS' => [
             'display_name' => 'Ghana Cedi',
@@ -404,6 +457,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '¢',
+            'deprecated' => false,
         ],
         'GIP' => [
             'display_name' => 'Gibraltar Pound',
@@ -411,6 +465,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '£',
+            'deprecated' => false,
         ],
         'GMD' => [
             'display_name' => 'Dalasi',
@@ -418,6 +473,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'D',
+            'deprecated' => false,
         ],
         'GNF' => [
             'display_name' => 'Guinea Franc',
@@ -425,6 +481,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'FG',
+            'deprecated' => false,
         ],
         'GTQ' => [
             'display_name' => 'Quetzal',
@@ -432,6 +489,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Q',
+            'deprecated' => false,
         ],
         'GYD' => [
             'display_name' => 'Guyana Dollar',
@@ -439,6 +497,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'HKD' => [
             'display_name' => 'Hong Kong Dollar',
@@ -446,6 +505,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'HNL' => [
             'display_name' => 'Lempira',
@@ -453,6 +513,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'L',
+            'deprecated' => false,
         ],
         'HRK' => [
             'display_name' => 'Croatian Kuna',
@@ -460,6 +521,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'kn',
+            'deprecated' => false,
         ],
         'HTG' => [
             'display_name' => 'Gourde',
@@ -467,6 +529,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'G',
+            'deprecated' => false,
         ],
         'HUF' => [
             'display_name' => 'Forint',
@@ -474,6 +537,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Ft',
+            'deprecated' => false,
         ],
         'IDR' => [
             'display_name' => 'Rupiah',
@@ -481,6 +545,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Rp',
+            'deprecated' => false,
         ],
         'ILS' => [
             'display_name' => 'New Israeli Sheqel',
@@ -488,6 +553,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₪',
+            'deprecated' => false,
         ],
         'INR' => [
             'display_name' => 'Indian Rupee',
@@ -495,6 +561,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₹',
+            'deprecated' => false,
         ],
         'IQD' => [
             'display_name' => 'Iraqi Dinar',
@@ -502,6 +569,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 3,
             'sub_unit' => 1000,
             'sign' => 'ع.د',
+            'deprecated' => false,
         ],
         'IRR' => [
             'display_name' => 'Iranian Rial',
@@ -509,6 +577,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '﷼',
+            'deprecated' => false,
         ],
         'ISK' => [
             'display_name' => 'Iceland Krona',
@@ -516,6 +585,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'kr',
+            'deprecated' => false,
         ],
         'JMD' => [
             'display_name' => 'Jamaican Dollar',
@@ -523,6 +593,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'JOD' => [
             'display_name' => 'Jordanian Dinar',
@@ -530,6 +601,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 3,
             'sub_unit' => 100,
             'sign' => 'د.ا',
+            'deprecated' => false,
         ],
         'JPY' => [
             'display_name' => 'Yen',
@@ -537,6 +609,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 1,
             'sign' => '¥',
+            'deprecated' => false,
         ],
         'KES' => [
             'display_name' => 'Kenyan Shilling',
@@ -544,6 +617,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Sh',
+            'deprecated' => false,
         ],
         'KGS' => [
             'display_name' => 'Som',
@@ -551,6 +625,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'сом',
+            'deprecated' => false,
         ],
         'KHR' => [
             'display_name' => 'Riel',
@@ -558,6 +633,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '៛',
+            'deprecated' => false,
         ],
         'KMF' => [
             'display_name' => 'Comoro Franc',
@@ -565,6 +641,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'CF',
+            'deprecated' => false,
         ],
         'KPW' => [
             'display_name' => 'North Korean Won',
@@ -572,6 +649,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₩',
+            'deprecated' => false,
         ],
         'KRW' => [
             'display_name' => 'Won',
@@ -579,6 +657,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => '₩',
+            'deprecated' => false,
         ],
         'KWD' => [
             'display_name' => 'Kuwaiti Dinar',
@@ -586,6 +665,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 3,
             'sub_unit' => 1000,
             'sign' => 'د.ك',
+            'deprecated' => false,
         ],
         'KYD' => [
             'display_name' => 'Cayman Islands Dollar',
@@ -593,6 +673,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'KZT' => [
             'display_name' => 'Tenge',
@@ -600,6 +681,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₸',
+            'deprecated' => false,
         ],
         'LAK' => [
             'display_name' => 'Kip',
@@ -607,6 +689,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₭',
+            'deprecated' => false,
         ],
         'LBP' => [
             'display_name' => 'Lebanese Pound',
@@ -614,6 +697,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '£',
+            'deprecated' => false,
         ],
         'LKR' => [
             'display_name' => 'Sri Lanka Rupee',
@@ -621,6 +705,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₨',
+            'deprecated' => false,
         ],
         'LRD' => [
             'display_name' => 'Liberian Dollar',
@@ -628,6 +713,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'LSL' => [
             'display_name' => 'Loti',
@@ -635,6 +721,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'L',
+            'deprecated' => false,
         ],
         'LTL' => [
             'display_name' => 'Lithuanian Litas',
@@ -658,6 +745,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 3,
             'sub_unit' => 1000,
             'sign' => 'ل.د',
+            'deprecated' => false,
         ],
         'MAD' => [
             'display_name' => 'Moroccan Dirham',
@@ -665,6 +753,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'د.م.',
+            'deprecated' => false,
         ],
         'MDL' => [
             'display_name' => 'Moldovan Leu',
@@ -672,6 +761,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'MDL',
+            'deprecated' => false,
         ],
         'MGA' => [
             'display_name' => 'Malagasy Ariary',
@@ -679,6 +769,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 5,
             'sign' => 'Ar',
+            'deprecated' => false,
         ],
         'MKD' => [
             'display_name' => 'Denar',
@@ -686,6 +777,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'ден',
+            'deprecated' => false,
         ],
         'MMK' => [
             'display_name' => 'Kyat',
@@ -693,6 +785,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'K',
+            'deprecated' => false,
         ],
         'MNT' => [
             'display_name' => 'Tugrik',
@@ -700,6 +793,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₮',
+            'deprecated' => false,
         ],
         'MOP' => [
             'display_name' => 'Pataca',
@@ -707,6 +801,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'P',
+            'deprecated' => false,
         ],
         'MRU' => [
             'display_name' => 'Ouguiya',
@@ -714,6 +809,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 5,
             'sign' => 'UM',
+            'deprecated' => false,
         ],
         'MRO' => [
             'display_name' => 'Ouguiya',
@@ -729,6 +825,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₨',
+            'deprecated' => false,
         ],
         'MVR' => [
             'display_name' => 'Rufiyaa',
@@ -736,6 +833,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Rf',
+            'deprecated' => false,
         ],
         'MWK' => [
             'display_name' => 'Kwacha',
@@ -743,6 +841,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'MK',
+            'deprecated' => false,
         ],
         'MXN' => [
             'display_name' => 'Mexican Peso',
@@ -750,6 +849,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'MXV' => [
             'display_name' => 'Mexican Unidad de Inversion (UDI)',
@@ -757,6 +857,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'MXV',
+            'deprecated' => false,
         ],
         'MYR' => [
             'display_name' => 'Malaysian Ringgit',
@@ -764,6 +865,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'RM',
+            'deprecated' => false,
         ],
         'MZN' => [
             'display_name' => 'Mozambique Metical',
@@ -771,6 +873,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'MT',
+            'deprecated' => false,
         ],
         'NAD' => [
             'display_name' => 'Namibia Dollar',
@@ -778,6 +881,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'NGN' => [
             'display_name' => 'Naira',
@@ -785,6 +889,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₦',
+            'deprecated' => false,
         ],
         'NIO' => [
             'display_name' => 'Cordoba Oro',
@@ -792,6 +897,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'NOK' => [
             'display_name' => 'Norwegian Krone',
@@ -799,6 +905,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'kr',
+            'deprecated' => false,
         ],
         'NPR' => [
             'display_name' => 'Nepalese Rupee',
@@ -806,6 +913,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₨',
+            'deprecated' => false,
         ],
         'NZD' => [
             'display_name' => 'New Zealand Dollar',
@@ -813,6 +921,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'OMR' => [
             'display_name' => 'Rial Omani',
@@ -820,6 +929,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 3,
             'sub_unit' => 1000,
             'sign' => '﷼',
+            'deprecated' => false,
         ],
         'PAB' => [
             'display_name' => 'Balboa',
@@ -827,6 +937,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'B/.',
+            'deprecated' => false,
         ],
         'PEN' => [
             'display_name' => 'Nuevo Sol',
@@ -834,6 +945,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'S/.',
+            'deprecated' => false,
         ],
         'PGK' => [
             'display_name' => 'Kina',
@@ -841,6 +953,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'K',
+            'deprecated' => false,
         ],
         'PHP' => [
             'display_name' => 'Philippine Peso',
@@ -848,6 +961,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₱',
+            'deprecated' => false,
         ],
         'PKR' => [
             'display_name' => 'Pakistan Rupee',
@@ -855,6 +969,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₨',
+            'deprecated' => false,
         ],
         'PLN' => [
             'display_name' => 'Zloty',
@@ -862,6 +977,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'zł',
+            'deprecated' => false,
         ],
         'PYG' => [
             'display_name' => 'Guarani',
@@ -869,6 +985,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => '₲',
+            'deprecated' => false,
         ],
         'QAR' => [
             'display_name' => 'Qatari Rial',
@@ -876,6 +993,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '﷼',
+            'deprecated' => false,
         ],
         'RON' => [
             'display_name' => 'New Romanian Leu',
@@ -883,6 +1001,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'lei',
+            'deprecated' => false,
         ],
         'RSD' => [
             'display_name' => 'Serbian Dinar',
@@ -890,6 +1009,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'дин.',
+            'deprecated' => false,
         ],
         'RUB' => [
             'display_name' => 'Russian Ruble',
@@ -897,6 +1017,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₽',
+            'deprecated' => false,
         ],
         'RWF' => [
             'display_name' => 'Rwanda Franc',
@@ -904,6 +1025,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'FRw',
+            'deprecated' => false,
         ],
         'SAR' => [
             'display_name' => 'Saudi Riyal',
@@ -911,6 +1033,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '﷼',
+            'deprecated' => false,
         ],
         'SBD' => [
             'display_name' => 'Solomon Islands Dollar',
@@ -918,6 +1041,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'SCR' => [
             'display_name' => 'Seychelles Rupee',
@@ -925,6 +1049,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'SR',
+            'deprecated' => false,
         ],
         'SDG' => [
             'display_name' => 'Sudanese Pound',
@@ -932,6 +1057,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '£',
+            'deprecated' => false,
         ],
         'SEK' => [
             'display_name' => 'Swedish Krona',
@@ -939,6 +1065,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'kr',
+            'deprecated' => false,
         ],
         'SGD' => [
             'display_name' => 'Singapore Dollar',
@@ -946,6 +1073,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'SHP' => [
             'display_name' => 'Saint Helena Pound',
@@ -953,6 +1081,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '£',
+            'deprecated' => false,
         ],
         'SLL' => [
             'display_name' => 'Leone',
@@ -960,6 +1089,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Le',
+            'deprecated' => false,
         ],
         'SOS' => [
             'display_name' => 'Somali Shilling',
@@ -967,6 +1097,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'S',
+            'deprecated' => false,
         ],
         'SRD' => [
             'display_name' => 'Surinam Dollar',
@@ -974,6 +1105,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'SSP' => [
             'display_name' => 'South Sudanese Pound',
@@ -981,6 +1113,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '£',
+            'deprecated' => false,
         ],
         'STN' => [
             'display_name' => 'Dobra',
@@ -988,6 +1121,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Db',
+            'deprecated' => false,
         ],
         'STD' => [
             'display_name' => 'Dobra',
@@ -1003,6 +1137,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₡',
+            'deprecated' => false,
         ],
         'SYP' => [
             'display_name' => 'Syrian Pound',
@@ -1010,6 +1145,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '£',
+            'deprecated' => false,
         ],
         'SZL' => [
             'display_name' => 'Lilangeni',
@@ -1017,6 +1153,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'L',
+            'deprecated' => false,
         ],
         'THB' => [
             'display_name' => 'Baht',
@@ -1024,6 +1161,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '฿',
+            'deprecated' => false,
         ],
         'TJS' => [
             'display_name' => 'Somoni',
@@ -1031,6 +1169,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'SM',
+            'deprecated' => false,
         ],
         'TMT' => [
             'display_name' => 'Turkmenistan New Manat',
@@ -1038,6 +1177,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'TMT',
+            'deprecated' => false,
         ],
         'TND' => [
             'display_name' => 'Tunisian Dinar',
@@ -1045,6 +1185,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 3,
             'sub_unit' => 1000,
             'sign' => 'د.ت',
+            'deprecated' => false,
         ],
         'TOP' => [
             'display_name' => 'Pa’anga',
@@ -1052,6 +1193,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'TRY' => [
             'display_name' => 'Turkish Lira',
@@ -1059,6 +1201,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₺',
+            'deprecated' => false,
         ],
         'TTD' => [
             'display_name' => 'Trinidad and Tobago Dollar',
@@ -1066,6 +1209,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'TWD' => [
             'display_name' => 'New Taiwan Dollar',
@@ -1073,6 +1217,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'TZS' => [
             'display_name' => 'Tanzanian Shilling',
@@ -1080,6 +1225,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Sh',
+            'deprecated' => false,
         ],
         'UAH' => [
             'display_name' => 'Hryvnia',
@@ -1087,6 +1233,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '₴',
+            'deprecated' => false,
         ],
         'UGX' => [
             'display_name' => 'Uganda Shilling',
@@ -1094,6 +1241,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'Ush',
+            'deprecated' => false,
         ],
         'USD' => [
             'display_name' => 'US Dollar',
@@ -1101,6 +1249,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'USN' => [
             'display_name' => 'US Dollar (Next day)',
@@ -1108,6 +1257,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'USS' => [
             'display_name' => 'US Dollar (Same day)',
@@ -1123,6 +1273,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'UYI',
+            'deprecated' => false,
         ],
         'UYU' => [
             'display_name' => 'Peso Uruguayo',
@@ -1130,6 +1281,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$U',
+            'deprecated' => false,
         ],
         'UYW' => [
             'display_name' => 'Unidad Previsional',
@@ -1137,6 +1289,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 4,
             'sub_unit' => 10000,
             'sign' => 'UP',
+            'deprecated' => false,
         ],
         'UZS' => [
             'display_name' => 'Uzbekistan Sum',
@@ -1144,6 +1297,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 's\'om',
+            'deprecated' => false,
         ],
         'VES' => [
             'display_name' => 'Bolivar Soberano',
@@ -1151,6 +1305,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Bs.S.',
+            'deprecated' => false,
         ],
         'VEF' => [
             'display_name' => 'Bolivar',
@@ -1166,6 +1321,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 10,
             'sign' => '₫',
+            'deprecated' => false,
         ],
         'VUV' => [
             'display_name' => 'Vatu',
@@ -1173,6 +1329,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 1,
             'sign' => 'VT',
+            'deprecated' => false,
         ],
         'WST' => [
             'display_name' => 'Tala',
@@ -1180,6 +1337,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'XAF' => [
             'display_name' => 'CFA Franc BEAC',
@@ -1187,6 +1345,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'FCFA',
+            'deprecated' => false,
         ],
         'XAG' => [
             'display_name' => 'Silver',
@@ -1194,6 +1353,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'Ag',
+            'deprecated' => false,
         ],
         'XAU' => [
             'display_name' => 'Gold',
@@ -1201,6 +1361,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'Au',
+            'deprecated' => false,
         ],
         'XBA' => [
             'display_name' => 'Bond Markets Unit European Composite Unit (EURCO)',
@@ -1208,6 +1369,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'XBA',
+            'deprecated' => false,
         ],
         'XBB' => [
             'display_name' => 'Bond Markets Unit European Monetary Unit (E.M.U.-6)',
@@ -1215,6 +1377,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'XBB',
+            'deprecated' => false,
         ],
         'XBC' => [
             'display_name' => 'Bond Markets Unit European Unit of Account 9 (E.U.A.-9)',
@@ -1222,6 +1385,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'XBC',
+            'deprecated' => false,
         ],
         'XBD' => [
             'display_name' => 'Bond Markets Unit European Unit of Account 17 (E.U.A.-17)',
@@ -1229,6 +1393,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'XBD',
+            'deprecated' => false,
         ],
         'XCD' => [
             'display_name' => 'East Caribbean Dollar',
@@ -1236,6 +1401,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '$',
+            'deprecated' => false,
         ],
         'XDR' => [
             'display_name' => 'SDR (Special Drawing Right)',
@@ -1243,6 +1409,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'XDR',
+            'deprecated' => false,
         ],
         'XFU' => [
             'display_name' => 'UIC-Franc',
@@ -1258,6 +1425,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'CFA',
+            'deprecated' => false,
         ],
         'XPD' => [
             'display_name' => 'Palladium',
@@ -1265,6 +1433,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'Pd',
+            'deprecated' => false,
         ],
         'XPF' => [
             'display_name' => 'CFP Franc',
@@ -1272,6 +1441,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'F',
+            'deprecated' => false,
         ],
         'XPT' => [
             'display_name' => 'Platinum',
@@ -1279,6 +1449,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'Pt',
+            'deprecated' => false,
         ],
         'XSU' => [
             'display_name' => 'Sucre',
@@ -1286,6 +1457,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'XSU',
+            'deprecated' => false,
         ],
         'XTS' => [
             'display_name' => 'Codes specifically reserved for testing purposes',
@@ -1293,6 +1465,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'XTS',
+            'deprecated' => false,
         ],
         'XUA' => [
             'display_name' => 'ADB Unit of Account',
@@ -1300,6 +1473,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'XUA',
+            'deprecated' => false,
         ],
         'XXX' => [
             'display_name' => 'The codes assigned for transactions where no currency is involved',
@@ -1307,6 +1481,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 0,
             'sub_unit' => 100,
             'sign' => 'XXX',
+            'deprecated' => false,
         ],
         'YER' => [
             'display_name' => 'Yemeni Rial',
@@ -1314,6 +1489,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => '﷼',
+            'deprecated' => false,
         ],
         'ZAR' => [
             'display_name' => 'Rand',
@@ -1321,6 +1497,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'R',
+            'deprecated' => false,
         ],
         'ZMW' => [
             'display_name' => 'Zambian Kwacha',
@@ -1328,6 +1505,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'ZK',
+            'deprecated' => false,
         ],
         'ZWL' => [
             'display_name' => 'Zimbabwe Dollar',
@@ -1335,6 +1513,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'ZWL',
+            'deprecated' => false,
         ],
     ];
 
@@ -1379,20 +1558,26 @@ final class Currency implements JsonSerializable
         return new self($map[$code]);
     }
 
-    public static function addCurrency(string $code, string $displayName, int $numericCode, int $defaultFractionDigits, int $subUnit): void
+    public static function addCurrency(
+        string $code,
+        string $displayName,
+        int $numericCode,
+        int $defaultFractionDigits,
+        int $subUnit,
+        bool $deprecated = false
+    ): void
     {
         self::$currencies[$code] = [
             'display_name' => $displayName,
             'numeric_code' => $numericCode,
             'default_fraction_digits' => $defaultFractionDigits,
             'sub_unit' => $subUnit,
+            'deprecated' => $deprecated,
         ];
     }
 
     /**
-     * Return only active currencies
-     *
-     * @return array
+     * Returns only active currencies.
      */
     public static function getCurrencies(): array
     {
@@ -1406,9 +1591,7 @@ final class Currency implements JsonSerializable
     }
 
     /**
-     * Return all currencies: active and deprecated
-     *
-     * @return array
+     * Returns all currencies: active and deprecated.
      */
     public static function getCurrenciesIncludingDeprecated(): array
     {
@@ -1417,8 +1600,6 @@ final class Currency implements JsonSerializable
 
     /**
      * Returns the ISO 4217 currency code of this currency.
-     *
-     * @return string
      */
     public function getCurrencyCode(): string
     {
@@ -1428,8 +1609,6 @@ final class Currency implements JsonSerializable
     /**
      * Returns the default number of fraction digits used with this
      * currency.
-     *
-     * @return int
      */
     public function getDefaultFractionDigits(): int
     {
@@ -1438,8 +1617,6 @@ final class Currency implements JsonSerializable
 
     /**
      * Returns the name that is suitable for displaying this currency.
-     *
-     * @return string
      */
     public function getDisplayName(): string
     {
@@ -1448,8 +1625,6 @@ final class Currency implements JsonSerializable
 
     /**
      * Returns the ISO 4217 numeric code of this currency.
-     *
-     * @return int
      */
     public function getNumericCode(): int
     {
@@ -1458,8 +1633,6 @@ final class Currency implements JsonSerializable
 
     /**
      * Returns the minor currency sub units.
-     *
-     * @return int
      */
     public function getSubUnit(): int
     {
@@ -1468,8 +1641,6 @@ final class Currency implements JsonSerializable
 
     /**
      * Returns the currency sign.
-     *
-     * @return string
      */
     public function getSign(): string
     {
@@ -1478,12 +1649,10 @@ final class Currency implements JsonSerializable
 
     /**
      * Returns the deprecation status.
-     *
-     * @return bool
      */
     public function isDeprecated(): bool
     {
-        return self::$currencies[$this->getCurrencyCode()]['deprecated'] ?? false;
+        return self::$currencies[$this->getCurrencyCode()]['deprecated'];
     }
 
     /**
