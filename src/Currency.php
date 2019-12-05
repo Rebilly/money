@@ -1565,8 +1565,7 @@ final class Currency implements JsonSerializable
         int $defaultFractionDigits,
         int $subUnit,
         bool $deprecated = false
-    ): void
-    {
+    ): void {
         self::$currencies[$code] = [
             'display_name' => $displayName,
             'numeric_code' => $numericCode,
@@ -1584,7 +1583,7 @@ final class Currency implements JsonSerializable
         return array_filter(
             self::$currencies,
             function ($currencyCode) {
-                return !(new Currency($currencyCode))->isDeprecated();
+                return !self::$currencies[$currencyCode]['deprecated'];
             },
             ARRAY_FILTER_USE_KEY
         );
