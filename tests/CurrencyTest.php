@@ -22,12 +22,14 @@ class CurrencyTest extends TestCase
         self::assertArrayHasKey('default_fraction_digits', $item, "Testing {$isoAlphaCode}");
         self::assertArrayHasKey('sub_unit', $item, "Testing {$isoAlphaCode}");
         self::assertArrayHasKey('sign', $item, "Testing {$isoAlphaCode}");
+        self::assertArrayHasKey('deprecated', $item, "Testing {$isoAlphaCode}");
 
         self::assertNotEmpty($item['display_name'], "Testing {$isoAlphaCode}");
         self::assertGreaterThan(0, $item['numeric_code'], "Testing {$isoAlphaCode}");
         self::assertGreaterThanOrEqual(0, $item['default_fraction_digits'], "Testing {$isoAlphaCode}");
         self::assertGreaterThanOrEqual(0, $item['sub_unit'], "Testing {$isoAlphaCode}");
         self::assertNotEmpty($item['sign'], "Testing {$isoAlphaCode}");
+        self::assertIsBool($item['deprecated'], "Testing {$isoAlphaCode}");
     }
 
     public function testExceptionIsRaisedForInvalidConstructorArgument(): void
@@ -46,6 +48,7 @@ class CurrencyTest extends TestCase
         $this->assertSame(978, $c->getNumericCode());
         $this->assertSame(100, $c->getSubUnit());
         $this->assertSame('€', $c->getSign());
+        $this->assertFalse($c->isDeprecated());
     }
 
     public function testCanBeConstructedFromLowercaseString(): void
@@ -74,6 +77,21 @@ class CurrencyTest extends TestCase
         $this->assertArrayHasKey('numeric_code', $currencies['EUR']);
         $this->assertArrayHasKey('default_fraction_digits', $currencies['EUR']);
         $this->assertArrayHasKey('sub_unit', $currencies['EUR']);
+        $this->assertArrayHasKey('deprecated', $currencies['EUR']);
+
+        // check that getCurrencies() method doesn't return deprecated currencies
+        $this->assertArrayNotHasKey('BYR', $currencies);
+    }
+
+    public function testGetCurrenciesIncludingDeprecated(): void
+    {
+        $currencies = Currency::getCurrenciesIncludingDeprecated();
+
+        $activeCurrency = 'EUR';
+        $deprecatedCurrency = 'BYR';
+
+        $this->assertArrayHasKey($activeCurrency, $currencies);
+        $this->assertArrayHasKey($deprecatedCurrency, $currencies);
     }
 
     public function testCanBeCastToString(): void
@@ -84,6 +102,15 @@ class CurrencyTest extends TestCase
     public function testCanCreateByNumCode(): void
     {
         $this->assertSame('EUR', Currency::fromNumericCode(978)->getCurrencyCode());
+    }
+
+    public function testDeprecation(): void
+    {
+        $activeCurrency = new Currency('EUR');
+        $deprecatedCurrency = new Currency('BYR');
+
+        $this->assertFalse($activeCurrency->isDeprecated());
+        $this->assertTrue($deprecatedCurrency->isDeprecated());
     }
 
     public function testExceptionIsRaisedForInvalidNumCode(): void
