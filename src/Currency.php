@@ -1582,10 +1582,9 @@ final class Currency implements JsonSerializable
     {
         return array_filter(
             self::$currencies,
-            function ($currencyCode) {
-                return !self::$currencies[$currencyCode]['deprecated'];
-            },
-            ARRAY_FILTER_USE_KEY
+            function ($currency): bool {
+                return !$currency['deprecated'];
+            }
         );
     }
 
