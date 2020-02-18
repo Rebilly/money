@@ -33,6 +33,22 @@ class RateTest extends TestCase
 
     /**
      * @depends testCanBeConstructed
+     */
+    public function testCanBeRecreatedWithNewRatio(Rate $rate)
+    {
+        $ratio = $rate->getRatio() * 2;
+        $mutatedRatio = $rate->withRatio($ratio);
+
+        self::assertNotSame($rate, $mutatedRatio);
+        self::assertSame($rate->getCurrencyPair(), $mutatedRatio->getCurrencyPair());
+        self::assertSame($rate->getDate(), $mutatedRatio->getDate());
+        self::assertSame($ratio, $mutatedRatio->getRatio());
+
+        return $rate;
+    }
+
+    /**
+     * @depends testCanBeConstructed
      *
      * @param Rate $rate
      */
