@@ -21,7 +21,8 @@ class CurrencyPairTest extends TestCase
         $b = new Currency('USD');
         $c = new CurrencyPair($a, $b);
 
-        $this->assertInstanceOf(CurrencyPair::class, $c);
+        self::assertSame($a, $c->getBaseCurrency());
+        self::assertSame($b, $c->getQuoteCurrency());
 
         return $c;
     }
@@ -33,7 +34,7 @@ class CurrencyPairTest extends TestCase
      */
     public function testCanBeSerialized(CurrencyPair $pair): void
     {
-        $this->assertSame('{"baseCurrency":"EUR","quoteCurrency":"USD"}', json_encode($pair));
+        self::assertSame('{"baseCurrency":"EUR","quoteCurrency":"USD"}', json_encode($pair));
     }
 
     /**
@@ -43,7 +44,7 @@ class CurrencyPairTest extends TestCase
      */
     public function testCanBeCastToString(CurrencyPair $c): void
     {
-        $this->assertSame('EUR/USD', (string) $c);
+        self::assertSame('EUR/USD', (string) $c);
     }
 
     /**
@@ -53,7 +54,7 @@ class CurrencyPairTest extends TestCase
      */
     public function testCanGetBaseCurrency(CurrencyPair $c): void
     {
-        $this->assertSame('EUR', $c->getBaseCurrency()->getCurrencyCode());
+        self::assertSame('EUR', $c->getBaseCurrency()->getCurrencyCode());
     }
 
     /**
@@ -63,7 +64,7 @@ class CurrencyPairTest extends TestCase
      */
     public function testCanGetTargetCurrency(CurrencyPair $c): void
     {
-        $this->assertSame('USD', $c->getQuoteCurrency()->getCurrencyCode());
+        self::assertSame('USD', $c->getQuoteCurrency()->getCurrencyCode());
     }
 
     /**
@@ -74,7 +75,7 @@ class CurrencyPairTest extends TestCase
     public function testEquals(CurrencyPair $c): void
     {
         $cp = new CurrencyPair(new Currency('EUR'), new Currency('USD'));
-        $this->assertTrue($c->equals($cp));
+        self::assertTrue($c->equals($cp));
     }
 
     /**
@@ -87,8 +88,7 @@ class CurrencyPairTest extends TestCase
         $rateProvider = new InMemoryRateProvider(['EUR/USD' => 1.09], new DateTime());
         $rate = $c->getRate($rateProvider);
 
-        $this->assertInstanceOf(Rate::class, $rate);
-        $this->assertSame(1.09, $rate->getRatio());
+        self::assertSame(1.09, $rate->getRatio());
     }
 
     /**
@@ -99,7 +99,7 @@ class CurrencyPairTest extends TestCase
     public function testInverse(CurrencyPair $c): void
     {
         $inverted = $c->getInverse();
-        $this->assertFalse($inverted->equals($c));
-        $this->assertTrue($inverted->equals(new CurrencyPair(new Currency('USD'), new Currency('EUR'))));
+        self::assertFalse($inverted->equals($c));
+        self::assertTrue($inverted->equals(new CurrencyPair(new Currency('USD'), new Currency('EUR'))));
     }
 }

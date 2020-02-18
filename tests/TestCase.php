@@ -2,8 +2,8 @@
 
 namespace Money;
 
-use PHPUnit\Framework\TestCase as BaseTestCase;
+use PHPUnit\Framework;
 
-abstract class TestCase extends BaseTestCase
+abstract class TestCase extends Framework\TestCase
 {
 }

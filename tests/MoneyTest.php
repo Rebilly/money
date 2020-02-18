@@ -18,7 +18,7 @@ class MoneyTest extends TestCase
     public function testCannotBeConstructedUsingInvalidValueArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        Money::fromString(null, new Currency('EUR'));
+        Money::fromString(null, 'EUR');
     }
 
     /**
@@ -37,8 +37,8 @@ class MoneyTest extends TestCase
     {
         $m = Money::fromString(0, 'EUR');
 
-        $this->assertSame(0, $m->getAmount());
-        $this->assertSame('EUR', $m->getCurrency()->getCurrencyCode());
+        self::assertSame(0, $m->getAmount());
+        self::assertSame('EUR', $m->getCurrency()->getCurrencyCode());
     }
 
     /**
@@ -48,24 +48,24 @@ class MoneyTest extends TestCase
     {
         $m = new Money(0, new Currency('EUR'));
 
-        $this->assertSame(0, $m->getAmount());
-        $this->assertSame('EUR', $m->getCurrency()->getCurrencyCode());
+        self::assertSame(0, $m->getAmount());
+        self::assertSame('EUR', $m->getCurrency()->getCurrencyCode());
 
         return $m;
     }
 
     public function testObjectCanBeConstructedFromStringValueAndCurrencyObject(): void
     {
-        $this->assertTrue(
+        self::assertTrue(
             (new Money(1234, new Currency('EUR')))->equals(
-            Money::fromString('12.34', new Currency('EUR'))
+                Money::fromString('12.34', new Currency('EUR'))
             )
         );
     }
 
     public function testObjectCanBeConstructedFromStringValueAndCurrencyString(): void
     {
-        $this->assertTrue(
+        self::assertTrue(
             (new Money(1234, new Currency('EUR')))->equals(
                 Money::fromString('12.34', 'EUR')
             )
@@ -74,7 +74,7 @@ class MoneyTest extends TestCase
 
     public function testObjectCanBeConstructedFromEmptyValueAndCurrencyObject(): void
     {
-        $this->assertTrue(
+        self::assertTrue(
             (new Money(0, new Currency('EUR')))->equals(
                 Money::fromString('', new Currency('EUR'))
             )
@@ -83,7 +83,7 @@ class MoneyTest extends TestCase
 
     public function testObjectCanBeConstructedFromEmptyValueAndCurrencyString(): void
     {
-        $this->assertTrue(
+        self::assertTrue(
             (new Money(0, new Currency('EUR')))->equals(
                 Money::fromString('', 'EUR')
             )
@@ -97,27 +97,27 @@ class MoneyTest extends TestCase
      */
     public function testAmountCanBeRetrieved(Money $m): void
     {
-        $this->assertSame(0, $m->getAmount());
+        self::assertSame(0, $m->getAmount());
     }
 
     public function testConvertedAmountCanBeRetrieved(): void
     {
         $m = new Money(1234, new Currency('EUR'));
-        $this->assertSame(12.34, $m->getConvertedAmount());
+        self::assertSame(12.34, $m->getConvertedAmount());
     }
 
     public function testFormattedAmountCanBeRetrieved(): void
     {
         $m = new Money(120034, new Currency('EUR'));
-        $this->assertSame('1 200.34', $m->getFormattedAmount('.', ' '));
-        $this->assertSame('€1,200.34', $m->getPrettyPrint('.', ','));
+        self::assertSame('1 200.34', $m->getFormattedAmount('.', ' '));
+        self::assertSame('€1,200.34', $m->getPrettyPrint('.', ','));
     }
 
     public function testFormattedNegativeAmountCanBeRetrieved(): void
     {
         $m = new Money(-120034, new Currency('EUR'));
-        $this->assertSame('-1 200.34', $m->getFormattedAmount('.', ' '));
-        $this->assertSame('-€1,200.34', $m->getPrettyPrint('.', ','));
+        self::assertSame('-1 200.34', $m->getFormattedAmount('.', ' '));
+        self::assertSame('-€1,200.34', $m->getPrettyPrint('.', ','));
     }
 
     /**
@@ -127,7 +127,7 @@ class MoneyTest extends TestCase
      */
     public function testCurrencyCanBeRetrieved(Money $m): void
     {
-        $this->assertSame(
+        self::assertSame(
             (new Currency('EUR'))->getCurrencyCode(),
             $m->getCurrency()->getCurrencyCode()
         );
@@ -139,9 +139,9 @@ class MoneyTest extends TestCase
         $b = new Money(2, new Currency('EUR'));
         $c = $a->add($b);
 
-        $this->assertSame(1, $a->getAmount());
-        $this->assertSame(2, $b->getAmount());
-        $this->assertSame(3, $c->getAmount());
+        self::assertSame(1, $a->getAmount());
+        self::assertSame(2, $b->getAmount());
+        self::assertSame(3, $c->getAmount());
     }
 
     public function testExceptionIsThrownForOverflowingAddition(): void
@@ -174,9 +174,9 @@ class MoneyTest extends TestCase
         $b = new Money(2, new Currency('EUR'));
         $c = $b->subtract($a);
 
-        $this->assertSame(1, $a->getAmount());
-        $this->assertSame(2, $b->getAmount());
-        $this->assertSame(1, $c->getAmount());
+        self::assertSame(1, $a->getAmount());
+        self::assertSame(2, $b->getAmount());
+        self::assertSame(1, $c->getAmount());
     }
 
     public function testExceptionIsThrownForOverflowingSubtraction(): void
@@ -201,8 +201,8 @@ class MoneyTest extends TestCase
         $a = new Money(1, new Currency('EUR'));
         $b = $a->negate();
 
-        $this->assertSame(1, $a->getAmount());
-        $this->assertSame(-1, $b->getAmount());
+        self::assertSame(1, $a->getAmount());
+        self::assertSame(-1, $b->getAmount());
     }
 
     public function testCanBeMultipliedByAFactor(): void
@@ -210,8 +210,8 @@ class MoneyTest extends TestCase
         $a = new Money(1, new Currency('EUR'));
         $b = $a->multiply(2);
 
-        $this->assertSame(1, $a->getAmount());
-        $this->assertSame(2, $b->getAmount());
+        self::assertSame(1, $a->getAmount());
+        self::assertSame(2, $b->getAmount());
     }
 
     public function testExceptionIsRaisedWhenMultipliedUsingInvalidRoundingMode(): void
@@ -226,7 +226,7 @@ class MoneyTest extends TestCase
         $a = new Money(99, new Currency('EUR'));
         $r = $a->allocateToTargets(10);
 
-        $this->assertEquals(
+        self::assertEquals(
             [
                 new Money(10, new Currency('EUR')),
                 new Money(10, new Currency('EUR')),
@@ -248,7 +248,7 @@ class MoneyTest extends TestCase
         $a = new Money(-99, new Currency('EUR'));
         $r = $a->allocateToTargets(10);
 
-        $this->assertEquals(
+        self::assertEquals(
             [
                 new Money(-10, new Currency('EUR')),
                 new Money(-10, new Currency('EUR')),
@@ -279,10 +279,10 @@ class MoneyTest extends TestCase
         $extract = $original->extractPercentage(21);
 
         $moneyExtracted = new Money(8264, new Currency('EUR'));
-        $this->assertTrue($moneyExtracted->equals($extract['subtotal']));
+        self::assertTrue($moneyExtracted->equals($extract['subtotal']));
 
         $remainingMoneyExtracted = new Money(1736, new Currency('EUR'));
-        $this->assertTrue($remainingMoneyExtracted->equals($extract['percentage']));
+        self::assertTrue($remainingMoneyExtracted->equals($extract['percentage']));
     }
 
     public function testExceptionIsRaisedWhenTryingToAllocateToInvalidNumberOfTargets(): void
@@ -297,7 +297,7 @@ class MoneyTest extends TestCase
         $a = new Money(5, new Currency('EUR'));
         $r = $a->allocateByRatios([3, 7]);
 
-        $this->assertEquals(
+        self::assertEquals(
             [
                 new Money(2, new Currency('EUR')),
                 new Money(3, new Currency('EUR')),
@@ -311,7 +311,7 @@ class MoneyTest extends TestCase
         $a = new Money(-5, new Currency('EUR'));
         $r = $a->allocateByRatios([3, 7]);
 
-        $this->assertEquals(
+        self::assertEquals(
             [
                 new Money(-2, new Currency('EUR')),
                 new Money(-3, new Currency('EUR')),
@@ -341,9 +341,9 @@ class MoneyTest extends TestCase
         $a = new Money(1, new Currency('EUR'));
         $b = new Money(2, new Currency('EUR'));
 
-        $this->assertSame(-1, $a->compareTo($b));
-        $this->assertSame(1, $b->compareTo($a));
-        $this->assertSame(0, $a->compareTo($a));
+        self::assertSame(-1, $a->compareTo($b));
+        self::assertSame(1, $b->compareTo($a));
+        self::assertSame(0, $a->compareTo($a));
     }
 
     /**
@@ -354,8 +354,8 @@ class MoneyTest extends TestCase
         $a = new Money(1, new Currency('EUR'));
         $b = new Money(2, new Currency('EUR'));
 
-        $this->assertFalse($a->greaterThan($b));
-        $this->assertTrue($b->greaterThan($a));
+        self::assertFalse($a->greaterThan($b));
+        self::assertTrue($b->greaterThan($a));
     }
 
     /**
@@ -366,8 +366,8 @@ class MoneyTest extends TestCase
         $a = new Money(1, new Currency('EUR'));
         $b = new Money(2, new Currency('EUR'));
 
-        $this->assertFalse($b->lessThan($a));
-        $this->assertTrue($a->lessThan($b));
+        self::assertFalse($b->lessThan($a));
+        self::assertTrue($a->lessThan($b));
     }
 
     /**
@@ -378,10 +378,10 @@ class MoneyTest extends TestCase
         $a = new Money(1, new Currency('EUR'));
         $b = new Money(1, new Currency('EUR'));
 
-        $this->assertSame(0, $a->compareTo($b));
-        $this->assertSame(0, $b->compareTo($a));
-        $this->assertTrue($a->equals($b));
-        $this->assertTrue($b->equals($a));
+        self::assertSame(0, $a->compareTo($b));
+        self::assertSame(0, $b->compareTo($a));
+        self::assertTrue($a->equals($b));
+        self::assertTrue($b->equals($a));
     }
 
     /**
@@ -393,10 +393,10 @@ class MoneyTest extends TestCase
         $b = new Money(2, new Currency('EUR'));
         $c = new Money(1, new Currency('EUR'));
 
-        $this->assertTrue($a->greaterThanOrEqual($a));
-        $this->assertTrue($a->greaterThanOrEqual($b));
-        $this->assertTrue($a->greaterThanOrEqual($c));
-        $this->assertFalse($c->greaterThanOrEqual($a));
+        self::assertTrue($a->greaterThanOrEqual($a));
+        self::assertTrue($a->greaterThanOrEqual($b));
+        self::assertTrue($a->greaterThanOrEqual($c));
+        self::assertFalse($c->greaterThanOrEqual($a));
     }
 
     /**
@@ -408,10 +408,10 @@ class MoneyTest extends TestCase
         $b = new Money(1, new Currency('EUR'));
         $c = new Money(2, new Currency('EUR'));
 
-        $this->assertTrue($a->lessThanOrEqual($a));
-        $this->assertTrue($a->lessThanOrEqual($b));
-        $this->assertTrue($a->lessThanOrEqual($c));
-        $this->assertFalse($c->lessThanOrEqual($a));
+        self::assertTrue($a->lessThanOrEqual($a));
+        self::assertTrue($a->lessThanOrEqual($b));
+        self::assertTrue($a->lessThanOrEqual($c));
+        self::assertFalse($c->lessThanOrEqual($a));
     }
 
     public function testExceptionIsRaisedWhenComparedToMoneyObjectWithDifferentCurrency(): void
@@ -425,7 +425,7 @@ class MoneyTest extends TestCase
 
     public function testCanBeSerializedToJson(): void
     {
-        $this->assertSame(
+        self::assertSame(
             '{"amount":1,"currency":"EUR"}',
             json_encode(new Money(1, new Currency('EUR')))
         );
@@ -434,28 +434,28 @@ class MoneyTest extends TestCase
     public function testZero(): void
     {
         $a = new Money(0, new Currency('USD'));
-        $this->assertTrue($a->isZero());
+        self::assertTrue($a->isZero());
 
         $b = new Money(1, new Currency('USD'));
-        $this->assertFalse($b->isZero());
+        self::assertFalse($b->isZero());
     }
 
     public function testPositive(): void
     {
         $a = new Money(1, new Currency('USD'));
-        $this->assertTrue($a->isPositive());
+        self::assertTrue($a->isPositive());
 
         $b = new Money(0, new Currency('USD'));
-        $this->assertFalse($b->isPositive());
+        self::assertFalse($b->isPositive());
     }
 
     public function testNegative(): void
     {
         $a = new Money(-1, new Currency('USD'));
-        $this->assertTrue($a->isNegative());
+        self::assertTrue($a->isNegative());
 
         $b = new Money(0, new Currency('USD'));
-        $this->assertFalse($b->isNegative());
+        self::assertFalse($b->isNegative());
     }
 
     public function testConvertEURtoUSD(): void
@@ -464,10 +464,10 @@ class MoneyTest extends TestCase
         $conversionRate = 1.09;
 
         $b = $a->convert(new Currency('USD'), $conversionRate, PHP_ROUND_HALF_UP);
-        $this->assertSame(1090, $b->getAmount());
+        self::assertSame(1090, $b->getAmount());
 
         // now convert back:
         $c = $b->convert(new Currency('EUR'), 1 / $conversionRate, PHP_ROUND_HALF_UP);
-        $this->assertSame(1000, $c->getAmount());
+        self::assertSame(1000, $c->getAmount());
     }
 }

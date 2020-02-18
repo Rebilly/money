@@ -63,7 +63,7 @@ final class Money implements JsonSerializable
      * currency's number of fractional digits.
      *
      * @param string $value
-     * @param string $currency
+     * @param Currency|string $currency
      *
      * @throws InvalidArgumentException
      *

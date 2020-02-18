@@ -20,7 +20,9 @@
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.8",
     "phpunit/phpunit": "^7.5",
-    "php-coveralls/php-coveralls": "^2.1"
+    "php-coveralls/php-coveralls": "^2.1",
+    "vimeo/psalm": "^3.9",
+    "psalm/plugin-phpunit": "^0.9.0"
   },
 
   "autoload": {
@@ -36,10 +38,5 @@
   },
 
   "suggest": {},
-
-  "scripts": {
-    "cs": "php-cs-fixer fix --verbose --dry-run --ansi",
-    "cs-fix": "php-cs-fixer fix --verbose --ansi",
-    "test": "phpunit"
-  }
+  "scripts": {}
 }

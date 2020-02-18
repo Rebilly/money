@@ -42,20 +42,20 @@ class CurrencyTest extends TestCase
     {
         $c = new Currency('EUR');
 
-        $this->assertSame('EUR', $c->getCurrencyCode());
-        $this->assertSame(2, $c->getDefaultFractionDigits());
-        $this->assertSame('Euro', $c->getDisplayName());
-        $this->assertSame(978, $c->getNumericCode());
-        $this->assertSame(100, $c->getSubUnit());
-        $this->assertSame('€', $c->getSign());
-        $this->assertFalse($c->isDeprecated());
+        self::assertSame('EUR', $c->getCurrencyCode());
+        self::assertSame(2, $c->getDefaultFractionDigits());
+        self::assertSame('Euro', $c->getDisplayName());
+        self::assertSame(978, $c->getNumericCode());
+        self::assertSame(100, $c->getSubUnit());
+        self::assertSame('€', $c->getSign());
+        self::assertFalse($c->isDeprecated());
     }
 
     public function testCanBeConstructedFromLowercaseString(): void
     {
         $c = new Currency('eur');
 
-        $this->assertSame('EUR', $c->getCurrencyCode());
+        self::assertSame('EUR', $c->getCurrencyCode());
     }
 
     public function testCustomCurrencyCanBeRegistered(): void
@@ -63,24 +63,24 @@ class CurrencyTest extends TestCase
         Currency::addCurrency('BTC', 'Bitcoin', 999, 4, 1000);
         $c = new Currency('BTC');
 
-        $this->assertSame('BTC', $c->getCurrencyCode());
+        self::assertSame('BTC', $c->getCurrencyCode());
     }
 
     public function testRegisteredCurrenciesCanBeAccessed(): void
     {
         $currencies = Currency::getCurrencies();
 
-        $this->assertInternalType('array', $currencies);
-        $this->assertArrayHasKey('EUR', $currencies);
-        $this->assertInternalType('array', $currencies['EUR']);
-        $this->assertArrayHasKey('display_name', $currencies['EUR']);
-        $this->assertArrayHasKey('numeric_code', $currencies['EUR']);
-        $this->assertArrayHasKey('default_fraction_digits', $currencies['EUR']);
-        $this->assertArrayHasKey('sub_unit', $currencies['EUR']);
-        $this->assertArrayHasKey('deprecated', $currencies['EUR']);
+        self::assertInternalType('array', $currencies);
+        self::assertArrayHasKey('EUR', $currencies);
+        self::assertInternalType('array', $currencies['EUR']);
+        self::assertArrayHasKey('display_name', $currencies['EUR']);
+        self::assertArrayHasKey('numeric_code', $currencies['EUR']);
+        self::assertArrayHasKey('default_fraction_digits', $currencies['EUR']);
+        self::assertArrayHasKey('sub_unit', $currencies['EUR']);
+        self::assertArrayHasKey('deprecated', $currencies['EUR']);
 
         // check that getCurrencies() method doesn't return deprecated currencies
-        $this->assertArrayNotHasKey('BYR', $currencies);
+        self::assertArrayNotHasKey('BYR', $currencies);
     }
 
     public function testGetCurrenciesIncludingDeprecated(): void
@@ -90,18 +90,18 @@ class CurrencyTest extends TestCase
         $activeCurrency = 'EUR';
         $deprecatedCurrency = 'BYR';
 
-        $this->assertArrayHasKey($activeCurrency, $currencies);
-        $this->assertArrayHasKey($deprecatedCurrency, $currencies);
+        self::assertArrayHasKey($activeCurrency, $currencies);
+        self::assertArrayHasKey($deprecatedCurrency, $currencies);
     }
 
     public function testCanBeCastToString(): void
     {
-        $this->assertSame('EUR', (string) new Currency('EUR'));
+        self::assertSame('EUR', (string) new Currency('EUR'));
     }
 
     public function testCanCreateByNumCode(): void
     {
-        $this->assertSame('EUR', Currency::fromNumericCode(978)->getCurrencyCode());
+        self::assertSame('EUR', Currency::fromNumericCode(978)->getCurrencyCode());
     }
 
     public function testDeprecation(): void
@@ -109,8 +109,8 @@ class CurrencyTest extends TestCase
         $activeCurrency = new Currency('EUR');
         $deprecatedCurrency = new Currency('BYR');
 
-        $this->assertFalse($activeCurrency->isDeprecated());
-        $this->assertTrue($deprecatedCurrency->isDeprecated());
+        self::assertFalse($activeCurrency->isDeprecated());
+        self::assertTrue($deprecatedCurrency->isDeprecated());
     }
 
     public function testExceptionIsRaisedForInvalidNumCode(): void
