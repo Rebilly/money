@@ -1,6 +1,6 @@
 CS_FIXER = php vendor/bin/php-cs-fixer fix --config=.php_cs -v --using-cache=no --diff --diff-format=udiff --ansi
 PSALM = vendor/bin/psalm --threads=1 --no-cache --find-dead-code=always --show-info=false --config=.psalm/config.xml
-PHPUNIT = php vendor/bin/phpunit --testsuite=unit
+PHPUNIT = php vendor/bin/phpunit
 
 PHP_FILES_DIFF = $(shell git diff --name-only --diff-filter=ACMRTUXB $(1) | grep -iE \.php$)
 CS_FIXER_TEST = if test "$(1)" ; then $(CS_FIXER) --dry-run $(1) ; else echo "Nothing to fix" ; fi
