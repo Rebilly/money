@@ -70,9 +70,9 @@ class CurrencyTest extends TestCase
     {
         $currencies = Currency::getCurrencies();
 
-        self::assertInternalType('array', $currencies);
+        self::assertIsArray($currencies);
         self::assertArrayHasKey('EUR', $currencies);
-        self::assertInternalType('array', $currencies['EUR']);
+        self::assertIsArray($currencies['EUR']);
         self::assertArrayHasKey('display_name', $currencies['EUR']);
         self::assertArrayHasKey('numeric_code', $currencies['EUR']);
         self::assertArrayHasKey('default_fraction_digits', $currencies['EUR']);
