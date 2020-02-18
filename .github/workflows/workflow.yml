@@ -1,0 +1,100 @@
+name: Tests
+on: [pull_request]
+
+env:
+  # see: https://github.com/shivammathur/setup-php
+  PHP_EXTENSIONS: mbstring, intl, json
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      max-parallel: 1
+      matrix:
+        php-version: ['7.3', '7.4']
+
+    env:
+      EXECUTE_COVERAGE: ${{ matrix.php-version == '7.3' }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: ${{ env.PHP_EXTENSIONS }}
+
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - uses: actions/cache@v1
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Login composer
+        run: composer config -g github-oauth.github.com ${{ secrets.COMPOSER_TOKEN }}
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Run PhpUnit with coverage
+        if: env.EXECUTE_COVERAGE == 'true'
+        run: make report-coverage
+
+      - name: Run PhpUnit
+        if: env.EXECUTE_COVERAGE != 'true'
+        run: make test
+
+      - name: Coverage monitor
+        if: env.EXECUTE_COVERAGE == 'true'
+        uses: slavcodev/coverage-monitor-action@1.0.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          clover_file: "logs/clover.xml"
+          comment: false
+          threshold_alert: 80
+          threshold_warning: 90
+
+  lint:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version: ['7.3']
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: ${{ env.PHP_EXTENSIONS }}
+
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - uses: actions/cache@v1
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Login composer
+        run: composer config -g github-oauth.github.com ${{ secrets.COMPOSER_TOKEN }}
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Lint code
+        run: make lint

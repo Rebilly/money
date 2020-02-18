@@ -2,6 +2,7 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Build Status][ico-travis]][link-travis]
 [![Coverage Status][ico-coveralls]][link-coveralls]
+[![GitHub Actions status][ico-github-actions]][link-github]
 
 # Money
 
@@ -244,11 +245,13 @@ If you discover a security vulnerability, please report it to security at rebill
 The Money library is open-sourced under the [MIT License](./LICENSE) distributed with the software. 
 
 
+[ico-github-actions]: https://github.com/Rebilly/money/workflows/Tests/badge.svg
 [ico-version]: https://img.shields.io/packagist/v/Rebilly/money.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/Rebilly/money/master.svg?style=flat-square
 [ico-coveralls]: https://img.shields.io/coveralls/github/Rebilly/money.svg?style=flat-square
 
+[link-github]: https://github.com/Rebilly/money
 [link-packagist]: https://packagist.org/packages/Rebilly/money
 [link-license]: LICENSE
 [link-travis]: https://travis-ci.org/Rebilly/money
