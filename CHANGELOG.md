@@ -16,11 +16,36 @@ Security - in case of vulnerabilities.
 
 ## [Unreleased]
 
-_TBD_
+### Changed
+
++ Migrated CI from **Travis CI** to **GitHub Actions**. 
++ Upgraded minimum PHP version to v7.3. 
+
+### Added
+
++ Added `Rate::withRatio` factory method to create modified value with specific ratio.
++ Added static analyzer into CI flow.
+
+## 1.0.3 (2019-12-05)
+
+### Fixed
+
++ Reverted removal of deprecated currencies. See [#6](https://github.com/Rebilly/money/pull/6) for details.
+
+### Added
+
++ Added a property to `Currency` showing that it is deprecated. 
+
+## 1.0.2 (2019-10-21)
+
+### Changed
+
++ Updated currencies list: remove deprecated, added new, rename code of others. See [#5](https://github.com/Rebilly/money/pull/5) for details.
 
 ## 1.0.1 (2019-03-05)
 
 ### Fixed
+
 + Fixed pretty-print formatting of negative amount of money
 
 ## 1.0.0 (2018-12-08)

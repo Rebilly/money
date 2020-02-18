@@ -81,6 +81,11 @@ final class Rate implements JsonSerializable
         return $money->convert($this->currencyPair->getQuoteCurrency(), $this->ratio, PHP_ROUND_HALF_UP);
     }
 
+    public function withRatio(float $ratio): self
+    {
+        return new self($this->getCurrencyPair(), $this->getDate(), $ratio);
+    }
+
     /**
      * {@inheritdoc}
      */
