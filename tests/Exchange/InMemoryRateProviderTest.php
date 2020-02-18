@@ -29,10 +29,7 @@ class InMemoryRateProviderTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
-    public function shouldAbleToGetRate(): void
+    public function testGetRate(): void
     {
         $pair = new CurrencyPair(new Currency('EUR'), new Currency('USD'));
         $rate = $this->rateProvider->fetchRate($pair);
@@ -49,10 +46,7 @@ class InMemoryRateProviderTest extends TestCase
         self::assertSame((new DateTimeImmutable('2017-01-01 01:02:03'))->getTimestamp(), $rate->getDate()->getTimestamp());
     }
 
-    /**
-     * @test
-     */
-    public function shouldAbleToGetRateFromInversePair(): void
+    public function testGetRateFromInversePair(): void
     {
         $pair = new CurrencyPair(new Currency('USD'), new Currency('EUR'));
         $rate = $this->rateProvider->fetchRate($pair);
@@ -62,10 +56,7 @@ class InMemoryRateProviderTest extends TestCase
         self::assertSame((new DateTimeImmutable('2017-01-01 01:02:03'))->getTimestamp(), $rate->getDate()->getTimestamp());
     }
 
-    /**
-     * @test
-     */
-    public function failOnMissingRate(): void
+    public function testFailOnMissingRate(): void
     {
         $pair = new CurrencyPair(new Currency('USD'), new Currency('RUB'));
         $exception = new MissingRateException($pair);

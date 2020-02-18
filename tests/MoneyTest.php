@@ -226,7 +226,7 @@ class MoneyTest extends TestCase
         $a = new Money(99, new Currency('EUR'));
         $r = $a->allocateToTargets(10);
 
-        self::assertEquals(
+        self::assertMoneyListEquals(
             [
                 new Money(10, new Currency('EUR')),
                 new Money(10, new Currency('EUR')),
@@ -248,7 +248,7 @@ class MoneyTest extends TestCase
         $a = new Money(-99, new Currency('EUR'));
         $r = $a->allocateToTargets(10);
 
-        self::assertEquals(
+        self::assertMoneyListEquals(
             [
                 new Money(-10, new Currency('EUR')),
                 new Money(-10, new Currency('EUR')),
@@ -297,7 +297,7 @@ class MoneyTest extends TestCase
         $a = new Money(5, new Currency('EUR'));
         $r = $a->allocateByRatios([3, 7]);
 
-        self::assertEquals(
+        self::assertMoneyListEquals(
             [
                 new Money(2, new Currency('EUR')),
                 new Money(3, new Currency('EUR')),
@@ -311,7 +311,7 @@ class MoneyTest extends TestCase
         $a = new Money(-5, new Currency('EUR'));
         $r = $a->allocateByRatios([3, 7]);
 
-        self::assertEquals(
+        self::assertMoneyListEquals(
             [
                 new Money(-2, new Currency('EUR')),
                 new Money(-3, new Currency('EUR')),
@@ -469,5 +469,18 @@ class MoneyTest extends TestCase
         // now convert back:
         $c = $b->convert(new Currency('EUR'), 1 / $conversionRate, PHP_ROUND_HALF_UP);
         self::assertSame(1000, $c->getAmount());
+    }
+
+    /**
+     * @param Money[] $expected
+     * @param Money[] $actual
+     */
+    private static function assertMoneyListEquals(array $expected, array $actual): void
+    {
+        self::assertCount(count($expected), $actual);
+        self::assertSame(array_keys($expected), array_keys($actual));
+        foreach ($expected as $index => $item) {
+            $item->equals($actual[$index]);
+        }
     }
 }
