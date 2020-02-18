@@ -20,10 +20,13 @@ class RateTest extends TestCase
 
     public function testCanBeConstructed()
     {
+        $date = $this->getRateDate();
         $cp = new CurrencyPair(new Currency('USD'), new Currency('EUR'));
-        $rate = new Rate($cp, $this->getRateDate(), 0.92);
+        $rate = new Rate($cp, $date, 0.92);
 
-        $this->assertInstanceOf(Rate::class, $rate);
+        self::assertSame($cp, $rate->getCurrencyPair());
+        self::assertSame($date, $rate->getDate());
+        self::assertSame(0.92, $rate->getRatio());
 
         return $rate;
     }
@@ -35,7 +38,7 @@ class RateTest extends TestCase
      */
     public function testCanBeSerialized(Rate $rate): void
     {
-        $this->assertSame(
+        self::assertSame(
             '{"baseCurrency":"USD","quoteCurrency":"EUR","date":"' . $this->getRateDate()->format('c') . '","ratio":0.92}',
             json_encode($rate)
         );
@@ -48,7 +51,7 @@ class RateTest extends TestCase
      */
     public function testCanGetRatio(Rate $rate): void
     {
-        $this->assertSame(0.92, $rate->getRatio());
+        self::assertSame(0.92, $rate->getRatio());
     }
 
     /**
@@ -58,7 +61,7 @@ class RateTest extends TestCase
      */
     public function testCanGetCurrencyPair(Rate $rate): void
     {
-        $this->assertInstanceOf(CurrencyPair::class, $rate->getCurrencyPair());
+        self::assertInstanceOf(CurrencyPair::class, $rate->getCurrencyPair());
     }
 
     /**
@@ -68,7 +71,7 @@ class RateTest extends TestCase
      */
     public function testCanGetDate(Rate $rate): void
     {
-        $this->assertInstanceOf(DateTime::class, $rate->getDate());
+        self::assertInstanceOf(DateTime::class, $rate->getDate());
     }
 
     /**
@@ -93,8 +96,8 @@ class RateTest extends TestCase
     {
         $money = new Money(1000, new Currency('USD'));
         $newMoney = $rate->convert($money);
-        $this->assertSame(920, $newMoney->getAmount());
-        $this->assertSame('EUR', $newMoney->getCurrency()->getCurrencyCode());
+        self::assertSame(920, $newMoney->getAmount());
+        self::assertSame('EUR', $newMoney->getCurrency()->getCurrencyCode());
     }
 
     /**
@@ -109,8 +112,8 @@ class RateTest extends TestCase
         $newMoney = $rate->convert($money)->multiply($markupBips / 10000 + 1);
 
         // the straight conversion without markup is EUR 9.20
-        $this->assertSame(966, $newMoney->getAmount());
-        $this->assertSame('EUR', $newMoney->getCurrency()->getCurrencyCode());
+        self::assertSame(966, $newMoney->getAmount());
+        self::assertSame('EUR', $newMoney->getCurrency()->getCurrencyCode());
     }
 
     private function getRateDate(): DateTime
