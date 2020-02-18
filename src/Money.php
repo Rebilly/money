@@ -284,11 +284,11 @@ final class Money implements JsonSerializable
         $remainder = $amount % $n;
         $result = [];
 
-        for ($i = 0; $i < $remainder; $i++) {
+        for ($i = 0; $i < $remainder; ++$i) {
             $result[] = $high->multiply($sign);
         }
 
-        for ($i = $remainder; $i < $n; $i++) {
+        for ($i = $remainder; $i < $n; ++$i) {
             $result[] = $low->multiply($sign);
         }
 
@@ -322,7 +322,7 @@ final class Money implements JsonSerializable
             $result[] = $money;
         }
 
-        for ($i = 0; $i < $remainder; $i++) {
+        for ($i = 0; $i < $remainder; ++$i) {
             $result[$i] = $this->changeAmount($result[$i]->getAmount() + $sign);
         }
 
