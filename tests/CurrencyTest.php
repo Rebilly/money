@@ -70,7 +70,6 @@ class CurrencyTest extends TestCase
     {
         $currencies = Currency::getCurrencies();
 
-        self::assertIsArray($currencies);
         self::assertArrayHasKey('EUR', $currencies);
         self::assertIsArray($currencies['EUR']);
         self::assertArrayHasKey('display_name', $currencies['EUR']);

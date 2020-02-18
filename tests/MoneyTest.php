@@ -478,9 +478,9 @@ class MoneyTest extends TestCase
     private static function assertMoneyListEquals(array $expected, array $actual): void
     {
         self::assertCount(count($expected), $actual);
-        self::assertSame(array_keys($expected), array_keys($actual));
         foreach ($expected as $index => $item) {
-            $item->equals($actual[$index]);
+            self::assertArrayHasKey($index, $actual);
+            self::assertTrue($item->equals($actual[$index]));
         }
     }
 }
