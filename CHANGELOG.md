@@ -16,12 +16,18 @@ Security - in case of vulnerabilities.
 
 ## [Unreleased]
 
+## 1.1.2 (2021-04-19)
+
+### Changed
+
++ Fix `Money::fromString` phpdoc and improve type validation of arguments.
+
 ## 1.1.0 (2020-02-21)
 
 ### Changed
 
-+ Migrated CI from **Travis CI** to **GitHub Actions**. 
-+ Upgraded minimum PHP version to v7.3. 
++ Migrated CI from **Travis CI** to **GitHub Actions**.
++ Upgraded minimum PHP version to v7.3.
 
 ### Added
 
