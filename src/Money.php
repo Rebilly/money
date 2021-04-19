@@ -62,7 +62,7 @@ final class Money implements JsonSerializable
      * number of fractional digits then the value will be rounded to the
      * currency's number of fractional digits.
      *
-     * @param string $value
+     * @param float|int|string $value
      * @param Currency|string $currency
      *
      * @throws InvalidArgumentException
@@ -71,11 +71,11 @@ final class Money implements JsonSerializable
      */
     public static function fromString($value, $currency): self
     {
-        if (!is_scalar($value) && !is_callable([$value, '__toString'])) {
+        if (!is_scalar($value) && !(is_object($value) && method_exists($value, '__toString'))) {
             throw new InvalidArgumentException('$value must be a string');
         }
 
-        if (!is_scalar($currency) && !is_callable([$currency, '__toString'])) {
+        if (!is_string($currency) && !(is_object($currency) && method_exists($currency, '__toString'))) {
             throw new InvalidArgumentException('$currency must be a string');
         }
 

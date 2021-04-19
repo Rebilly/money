@@ -27,6 +27,7 @@ class MoneyTest extends TestCase
     public function testCannotBeConstructedUsingInvalidCurrencyArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
+        /** @noinspection PhpParamsInspection */
         Money::fromString(0, new stdClass());
     }
 
