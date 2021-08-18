@@ -27,11 +27,11 @@ install:
 
 .PHONY: cs-test
 cs-test:
-	$(call CS_FIXER_TEST,$(call PHP_FILES_DIFF,"origin/master"))
+	$(call CS_FIXER_TEST,$(call PHP_FILES_DIFF,"origin/main"))
 
 .PHONY: cs-fix
 cs-fix:
-	$(call CS_FIXER_FIX,$(call PHP_FILES_DIFF,"origin/master"))
+	$(call CS_FIXER_FIX,$(call PHP_FILES_DIFF,"origin/main"))
 
 .PHONY: cs-test-all
 cs-test-all:
