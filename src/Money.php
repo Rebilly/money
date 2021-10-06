@@ -79,7 +79,6 @@ final class Money implements JsonSerializable
             throw new InvalidArgumentException('$currency must be a string');
         }
 
-        $value = (string) $value;
         $currency = new Currency((string) $currency);
 
         return new self(
@@ -87,7 +86,7 @@ final class Money implements JsonSerializable
                 round(
                     $currency->getSubUnit() *
                     round(
-                        $value,
+                        is_string($value) ? (float) $value : $value,
                         $currency->getDefaultFractionDigits(),
                         PHP_ROUND_HALF_UP
                     ),
