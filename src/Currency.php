@@ -1576,12 +1576,12 @@ final class Currency implements JsonSerializable
         ));
 
         $this->currencyCode = $currencyCode;
-        $this->displayName = (string) self::$currencies[$currencyCode]['display_name'];
-        $this->numericCode = (int) self::$currencies[$currencyCode]['numeric_code'];
-        $this->defaultFractionDigits = (int) self::$currencies[$currencyCode]['default_fraction_digits'];
-        $this->subUnit = (int) self::$currencies[$currencyCode]['sub_unit'];
-        $this->sign = (string) self::$currencies[$currencyCode]['sign'];
-        $this->deprecated = (bool) self::$currencies[$currencyCode]['deprecated'];
+        $this->displayName = self::$currencies[$currencyCode]['display_name'];
+        $this->numericCode = self::$currencies[$currencyCode]['numeric_code'];
+        $this->defaultFractionDigits = self::$currencies[$currencyCode]['default_fraction_digits'];
+        $this->subUnit = self::$currencies[$currencyCode]['sub_unit'];
+        $this->sign = self::$currencies[$currencyCode]['sign'];
+        $this->deprecated = self::$currencies[$currencyCode]['deprecated'];
     }
 
     public function __toString(): string
