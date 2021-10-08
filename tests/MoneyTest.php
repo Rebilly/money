@@ -9,6 +9,8 @@ use UnderflowException;
 
 /**
  * Class MoneyTest.
+ *
+ * @psalm-suppress UnusedMethodCall Some methods are called with expectation of exceptions.
  */
 class MoneyTest extends TestCase
 {
