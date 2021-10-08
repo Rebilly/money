@@ -87,7 +87,7 @@ final class Money implements JsonSerializable
                 round(
                     $currency->getSubUnit() *
                     round(
-                        $value,
+                        (float) $value,
                         $currency->getDefaultFractionDigits(),
                         PHP_ROUND_HALF_UP
                     ),
