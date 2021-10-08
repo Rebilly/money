@@ -1526,6 +1526,36 @@ final class Currency implements JsonSerializable
      */
     private $currencyCode;
 
+    /**
+     * @var string
+     */
+    private $displayName;
+
+    /**
+     * @var int
+     */
+    private $numericCode;
+
+    /**
+     * @var int
+     */
+    private $defaultFractionDigits;
+
+    /**
+     * @var int
+     */
+    private $subUnit;
+
+    /**
+     * @var string
+     */
+    private $sign;
+
+    /**
+     * @var bool
+     */
+    private $deprecated;
+
     public function __construct(string $currencyCode)
     {
         $currencyCode = mb_strtoupper($currencyCode);
@@ -1534,15 +1564,27 @@ final class Currency implements JsonSerializable
             throw new InvalidArgumentException(sprintf('Unknown currency code "%s"', $currencyCode));
         }
 
+        assert(isset(
+            self::$currencies[$currencyCode]['display_name'],
+            self::$currencies[$currencyCode]['numeric_code'],
+            self::$currencies[$currencyCode]['default_fraction_digits'],
+            self::$currencies[$currencyCode]['sub_unit'],
+            self::$currencies[$currencyCode]['sign'],
+            self::$currencies[$currencyCode]['pretty_print_format'],
+            self::$currencies[$currencyCode]['negative_pretty_print_format'],
+            self::$currencies[$currencyCode]['deprecated'],
+        ));
+
         $this->currencyCode = $currencyCode;
+        $this->displayName = (string) self::$currencies[$currencyCode]['display_name'];
+        $this->numericCode = (int) self::$currencies[$currencyCode]['numeric_code'];
+        $this->defaultFractionDigits = (int) self::$currencies[$currencyCode]['default_fraction_digits'];
+        $this->subUnit = (int) self::$currencies[$currencyCode]['sub_unit'];
+        $this->sign = (string) self::$currencies[$currencyCode]['sign'];
+        $this->deprecated = (bool) self::$currencies[$currencyCode]['deprecated'];
     }
 
-    /**
-     * Returns the ISO 4217 currency code of this currency.
-     *
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->getCurrencyCode();
     }
@@ -1607,6 +1649,8 @@ final class Currency implements JsonSerializable
 
     /**
      * Returns the ISO 4217 currency code of this currency.
+     *
+     * @psalm-mutation-free
      */
     public function getCurrencyCode(): string
     {
@@ -1616,60 +1660,77 @@ final class Currency implements JsonSerializable
     /**
      * Returns the default number of fraction digits used with this
      * currency.
+     *
+     * @psalm-mutation-free
      */
     public function getDefaultFractionDigits(): int
     {
-        return self::$currencies[$this->getCurrencyCode()]['default_fraction_digits'];
+        return $this->defaultFractionDigits;
     }
 
     /**
      * Returns the name that is suitable for displaying this currency.
+     *
+     * @psalm-mutation-free
      */
     public function getDisplayName(): string
     {
-        return self::$currencies[$this->getCurrencyCode()]['display_name'];
+        return $this->displayName;
     }
 
     /**
      * Returns the ISO 4217 numeric code of this currency.
+     *
+     * @psalm-mutation-free
      */
     public function getNumericCode(): int
     {
-        return self::$currencies[$this->getCurrencyCode()]['numeric_code'];
+        return $this->numericCode;
     }
 
     /**
      * Returns the minor currency sub units.
+     *
+     * @psalm-mutation-free
      */
     public function getSubUnit(): int
     {
-        return self::$currencies[$this->getCurrencyCode()]['sub_unit'];
+        return $this->subUnit;
     }
 
     /**
      * Returns the currency sign.
+     *
+     * @psalm-mutation-free
      */
     public function getSign(): string
     {
-        return self::$currencies[$this->getCurrencyCode()]['sign'];
+        return $this->sign;
     }
 
     /**
      * Returns the deprecation status.
+     *
+     * @psalm-mutation-free
      */
     public function isDeprecated(): bool
     {
-        return self::$currencies[$this->getCurrencyCode()]['deprecated'];
+        return $this->deprecated;
     }
 
     /**
      * {@inheritdoc}
+     *
+     * @psalm-mutation-free
      */
     public function jsonSerialize(): string
     {
         return $this->getCurrencyCode();
     }
 
+    /**
+     * @psalm-mutation-free
+     */
     public function equals(self $currency): bool
     {
         return $this->getCurrencyCode() === $currency->getCurrencyCode();
