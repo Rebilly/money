@@ -18,8 +18,9 @@
   },
 
   "require": {
-    "php": "^7.3",
-    "ext-json": "*"
+    "php": "^7.3 || ^8.0",
+    "ext-json": "*",
+    "ext-mbstring": "*"
   },
 
   "require-dev": {

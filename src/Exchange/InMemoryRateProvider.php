@@ -4,10 +4,13 @@ namespace Money\Exchange;
 
 use DateTimeInterface;
 
+/**
+ * @psalm-type RateRegistry=array<string, float>
+ */
 final class InMemoryRateProvider implements RateProvider
 {
     /**
-     * @var Rate[]
+     * @var RateRegistry
      */
     private $rates;
 
@@ -28,7 +31,7 @@ final class InMemoryRateProvider implements RateProvider
      * ]
      * ```
      *
-     * @param array $rates Array of rates indexed by currency pair string.
+     * @param RateRegistry $rates Array of rates indexed by currency pair string.
      * @param DateTimeInterface $date The datetime at the time the rates were fetched.
      */
     public function __construct(array $rates, DateTimeInterface $date)

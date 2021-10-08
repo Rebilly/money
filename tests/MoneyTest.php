@@ -95,6 +95,22 @@ class MoneyTest extends TestCase
         );
     }
 
+    public function testObjectCanBeConstructedFromStringableObject(): void
+    {
+        $amount = new class() {
+            public function __toString()
+            {
+                return '10.0';
+            }
+        };
+
+        self::assertTrue(
+            (new Money(1000, new Currency('EUR')))->equals(
+                Money::fromString($amount, 'EUR')
+            )
+        );
+    }
+
     /**
      * @depends testObjectCanBeConstructedFromIntegerValueAndCurrencyObject
      *

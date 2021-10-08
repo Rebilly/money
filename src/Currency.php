@@ -12,11 +12,15 @@ use JsonSerializable;
  *
  * @see http://www.github.com/sebastianbergmann/money
  * @see http://docs.oracle.com/javase/7/docs/api/java/util/Currency.html
+ *
+ * @psalm-type CurrencyAlpha2Code=string
+ * @psalm-type CurrencyMetadata=array{display_name: string, numeric_code: int, default_fraction_digits: int, sub_unit: int, sign: string, deprecated: boolean}
+ * @psalm-type CurrencyRegistry=array<CurrencyAlpha2Code, CurrencyMetadata>
  */
 final class Currency implements JsonSerializable
 {
     /**
-     * @var array
+     * @var CurrencyRegistry
      */
     private static $currencies = [
         'AED' => [
@@ -1518,7 +1522,7 @@ final class Currency implements JsonSerializable
     ];
 
     /**
-     * @var string
+     * @var CurrencyAlpha2Code
      */
     private $currencyCode;
 
@@ -1571,18 +1575,21 @@ final class Currency implements JsonSerializable
             'numeric_code' => $numericCode,
             'default_fraction_digits' => $defaultFractionDigits,
             'sub_unit' => $subUnit,
+            'sign' => '',
             'deprecated' => $deprecated,
         ];
     }
 
     /**
      * Returns only active currencies.
+     *
+     * @return CurrencyRegistry
      */
     public static function getCurrencies(): array
     {
         return array_filter(
             self::$currencies,
-            function (array $currency): bool {
+            static function (array $currency): bool {
                 return !$currency['deprecated'];
             }
         );
@@ -1590,6 +1597,8 @@ final class Currency implements JsonSerializable
 
     /**
      * Returns all currencies: active and deprecated.
+     *
+     * @return CurrencyRegistry
      */
     public static function getCurrenciesIncludingDeprecated(): array
     {

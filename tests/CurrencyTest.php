@@ -2,7 +2,6 @@
 
 namespace Money;
 
-use Generator;
 use InvalidArgumentException;
 
 class CurrencyTest extends TestCase
@@ -71,7 +70,6 @@ class CurrencyTest extends TestCase
         $currencies = Currency::getCurrencies();
 
         self::assertArrayHasKey('EUR', $currencies);
-        self::assertIsArray($currencies['EUR']);
         self::assertArrayHasKey('display_name', $currencies['EUR']);
         self::assertArrayHasKey('numeric_code', $currencies['EUR']);
         self::assertArrayHasKey('default_fraction_digits', $currencies['EUR']);
@@ -118,14 +116,9 @@ class CurrencyTest extends TestCase
         Currency::fromNumericCode(0);
     }
 
-    /**
-     * @return Generator
-     */
-    public function provideCurrenciesData(): Generator
+    public function provideCurrenciesData(): iterable
     {
-        $data = Currency::getCurrencies();
-
-        foreach ($data as $isoAlphaCode => $item) {
+        foreach (Currency::getCurrencies() as $isoAlphaCode => $item) {
             yield [$isoAlphaCode, $item];
         }
     }
