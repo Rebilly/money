@@ -119,13 +119,11 @@ class CurrencyTest extends TestCase
     }
 
     /**
-     * @return Generator
+     * @return Generator<string, array{display_name: string, numeric_code: int, default_fraction_digits: int, sub_unit: int, sign: string, deprecated: boolean}>
      */
     public function provideCurrenciesData(): Generator
     {
-        $data = Currency::getCurrencies();
-
-        foreach ($data as $isoAlphaCode => $item) {
+        foreach (Currency::getCurrencies() as $isoAlphaCode => $item) {
             yield [$isoAlphaCode, $item];
         }
     }

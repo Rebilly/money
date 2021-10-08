@@ -298,7 +298,7 @@ final class Money implements JsonSerializable
      * Allocate the monetary value represented by this Money object
      * using a list of ratios.
      *
-     * @param array $ratios
+     * @param array<int|float> $ratios
      *
      * @return self[]
      */

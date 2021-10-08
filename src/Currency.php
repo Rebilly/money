@@ -16,7 +16,7 @@ use JsonSerializable;
 final class Currency implements JsonSerializable
 {
     /**
-     * @var array
+     * @var array<string, array{display_name: string, numeric_code: int, default_fraction_digits: int, sub_unit: int, sign: string, deprecated: boolean}>
      */
     private static $currencies = [
         'AED' => [
@@ -1571,18 +1571,21 @@ final class Currency implements JsonSerializable
             'numeric_code' => $numericCode,
             'default_fraction_digits' => $defaultFractionDigits,
             'sub_unit' => $subUnit,
+            'sign' => '',
             'deprecated' => $deprecated,
         ];
     }
 
     /**
      * Returns only active currencies.
+     *
+     * @return array<string, array{display_name: string, numeric_code: int, default_fraction_digits: int, sub_unit: int, sign: string, deprecated: boolean}>
      */
     public static function getCurrencies(): array
     {
         return array_filter(
             self::$currencies,
-            function (array $currency): bool {
+            static function (array $currency): bool {
                 return !$currency['deprecated'];
             }
         );
@@ -1590,6 +1593,8 @@ final class Currency implements JsonSerializable
 
     /**
      * Returns all currencies: active and deprecated.
+     *
+     * @return array<string, array{display_name: string, numeric_code: int, default_fraction_digits: int, sub_unit: int, sign: string, deprecated: boolean}>
      */
     public static function getCurrenciesIncludingDeprecated(): array
     {

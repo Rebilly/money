@@ -75,16 +75,6 @@ class RateTest extends TestCase
      *
      * @param Rate $rate
      */
-    public function testCanGetCurrencyPair(Rate $rate): void
-    {
-        self::assertInstanceOf(CurrencyPair::class, $rate->getCurrencyPair());
-    }
-
-    /**
-     * @depends testCanBeConstructed
-     *
-     * @param Rate $rate
-     */
     public function testCanGetDate(Rate $rate): void
     {
         self::assertInstanceOf(DateTime::class, $rate->getDate());

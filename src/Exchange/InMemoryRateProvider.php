@@ -28,7 +28,7 @@ final class InMemoryRateProvider implements RateProvider
      * ]
      * ```
      *
-     * @param array $rates Array of rates indexed by currency pair string.
+     * @param array<string, float> $rates Array of rates indexed by currency pair string.
      * @param DateTimeInterface $date The datetime at the time the rates were fetched.
      */
     public function __construct(array $rates, DateTimeInterface $date)

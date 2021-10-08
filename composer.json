@@ -42,6 +42,12 @@
     }
   },
 
+  "replace": {
+    "symfony/polyfill-mbstring": "*",
+    "symfony/polyfill-php72": "*",
+    "symfony/polyfill-php73": "*"
+  },
+
   "suggest": {},
   "scripts": {}
 }
