@@ -12,11 +12,14 @@ use JsonSerializable;
  *
  * @see http://www.github.com/sebastianbergmann/money
  * @see http://docs.oracle.com/javase/7/docs/api/java/util/Currency.html
+ *
+ * @psalm-type CurrencyAlpha2Code=string
+ * @psalm-type CurrencyMetadata=array{display_name: string, numeric_code: int, default_fraction_digits: int, sub_unit: int, sign: string, deprecated: boolean}
  */
 final class Currency implements JsonSerializable
 {
     /**
-     * @var array<string, array{display_name: string, numeric_code: int, default_fraction_digits: int, sub_unit: int, sign: string, deprecated: boolean}>
+     * @var array<CurrencyAlpha2Code, CurrencyMetadata>
      */
     private static $currencies = [
         'AED' => [
@@ -1517,9 +1520,6 @@ final class Currency implements JsonSerializable
         ],
     ];
 
-    /**
-     * @var string
-     */
     private $currencyCode;
 
     public function __construct(string $currencyCode)
@@ -1579,7 +1579,7 @@ final class Currency implements JsonSerializable
     /**
      * Returns only active currencies.
      *
-     * @return array<string, array{display_name: string, numeric_code: int, default_fraction_digits: int, sub_unit: int, sign: string, deprecated: boolean}>
+     * @return array<CurrencyAlpha2Code, CurrencyMetadata>
      */
     public static function getCurrencies(): array
     {
@@ -1594,7 +1594,7 @@ final class Currency implements JsonSerializable
     /**
      * Returns all currencies: active and deprecated.
      *
-     * @return array<string, array{display_name: string, numeric_code: int, default_fraction_digits: int, sub_unit: int, sign: string, deprecated: boolean}>
+     * @return array<CurrencyAlpha2Code, CurrencyMetadata>
      */
     public static function getCurrenciesIncludingDeprecated(): array
     {
