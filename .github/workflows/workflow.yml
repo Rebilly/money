@@ -27,6 +27,7 @@ jobs:
           php-version: ${{ matrix.php-version }}
           extensions: ${{ env.PHP_EXTENSIONS }}
           tools: composer:v1
+          ini-values: zend.assertions=1
 
       - name: Get Composer Cache Directory
         id: composer-cache
