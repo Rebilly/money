@@ -15,11 +15,12 @@ use JsonSerializable;
  *
  * @psalm-type CurrencyAlpha2Code=string
  * @psalm-type CurrencyMetadata=array{display_name: string, numeric_code: int, default_fraction_digits: int, sub_unit: int, sign: string, deprecated: boolean}
+ * @psalm-type CurrencyRegistry=array<CurrencyAlpha2Code, CurrencyMetadata>
  */
 final class Currency implements JsonSerializable
 {
     /**
-     * @var array<CurrencyAlpha2Code, CurrencyMetadata>
+     * @var CurrencyRegistry
      */
     private static $currencies = [
         'AED' => [
@@ -1582,7 +1583,7 @@ final class Currency implements JsonSerializable
     /**
      * Returns only active currencies.
      *
-     * @return array<CurrencyAlpha2Code, CurrencyMetadata>
+     * @return CurrencyRegistry
      */
     public static function getCurrencies(): array
     {
@@ -1597,7 +1598,7 @@ final class Currency implements JsonSerializable
     /**
      * Returns all currencies: active and deprecated.
      *
-     * @return array<CurrencyAlpha2Code, CurrencyMetadata>
+     * @return CurrencyRegistry
      */
     public static function getCurrenciesIncludingDeprecated(): array
     {
