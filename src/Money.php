@@ -62,7 +62,7 @@ final class Money implements JsonSerializable
      * number of fractional digits then the value will be rounded to the
      * currency's number of fractional digits.
      *
-     * @param float|int|string|object $value
+     * @param float|int|object|string $value
      * @param Currency|string $currency
      *
      * @throws InvalidArgumentException
@@ -299,7 +299,7 @@ final class Money implements JsonSerializable
      * Allocate the monetary value represented by this Money object
      * using a list of ratios.
      *
-     * @param array<int|float> $ratios
+     * @param array<float|int> $ratios
      *
      * @return self[]
      */

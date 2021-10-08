@@ -2,7 +2,6 @@
 
 namespace Money;
 
-use Generator;
 use InvalidArgumentException;
 
 class CurrencyTest extends TestCase
