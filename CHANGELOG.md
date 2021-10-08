@@ -16,6 +16,13 @@ Security - in case of vulnerabilities.
 
 ## [Unreleased]
 
+## 1.2.0 (2021-10-08)
+
+### Changed
+
++ Annotate the immutability of `Money`.
++ Annotate the mutation-free behavior of all methods of `Currency`, except `addCurrency`.
+
 ## 1.1.2 (2021-04-19)
 
 ### Changed
