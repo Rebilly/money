@@ -7,7 +7,7 @@ use DateTimeInterface;
 final class InMemoryRateProvider implements RateProvider
 {
     /**
-     * @var Rate[]
+     * @var array<string, float>
      */
     private $rates;
 

@@ -71,7 +71,6 @@ class CurrencyTest extends TestCase
         $currencies = Currency::getCurrencies();
 
         self::assertArrayHasKey('EUR', $currencies);
-        self::assertIsArray($currencies['EUR']);
         self::assertArrayHasKey('display_name', $currencies['EUR']);
         self::assertArrayHasKey('numeric_code', $currencies['EUR']);
         self::assertArrayHasKey('default_fraction_digits', $currencies['EUR']);
@@ -118,10 +117,7 @@ class CurrencyTest extends TestCase
         Currency::fromNumericCode(0);
     }
 
-    /**
-     * @return Generator<string, array{display_name: string, numeric_code: int, default_fraction_digits: int, sub_unit: int, sign: string, deprecated: boolean}>
-     */
-    public function provideCurrenciesData(): Generator
+    public function provideCurrenciesData(): iterable
     {
         foreach (Currency::getCurrencies() as $isoAlphaCode => $item) {
             yield [$isoAlphaCode, $item];
