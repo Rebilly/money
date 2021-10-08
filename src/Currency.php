@@ -1520,6 +1520,9 @@ final class Currency implements JsonSerializable
         ],
     ];
 
+    /**
+     * @var CurrencyAlpha2Code
+     */
     private $currencyCode;
 
     public function __construct(string $currencyCode)

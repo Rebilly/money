@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<psalm
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="https://getpsalm.org/schema/config"
+  xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+  usePhpDocMethodsWithoutMagicCall="true"
+  allowPhpStormGenerics="true"
+  allowStringToStandInForClass="true"
+  hoistConstants="true"
+  cacheDirectory="./.cache-psalm"
+  autoloader="vendor/autoload.php"
+  findUnusedPsalmSuppress="true"
+>
+  <projectFiles>
+    <directory name="src"/>
+    <directory name="tests"/>
+    <ignoreFiles>
+      <directory name="vendor"/>
+    </ignoreFiles>
+  </projectFiles>
+
+  <issueHandlers>
+    <UnusedClass errorLevel="suppress"/> <!-- Unwanted in library -->
+    <PossiblyUnusedMethod errorLevel="suppress"/> <!-- Unwanted in library -->
+
+    <MissingReturnType errorLevel="suppress"/> <!-- Temporary disabled for BC -->
+    <PropertyNotSetInConstructor errorLevel="suppress"/> <!-- Temporary disabled - issues with tests -->
+
+    <InvalidArgument>
+      <errorLevel type="suppress">
+        <file name="src/Exchange/InMemoryRateProvider.php"/>
+      </errorLevel>
+    </InvalidArgument>
+
+    <InvalidOperand>
+      <errorLevel type="suppress">
+        <file name="src/Exchange/InMemoryRateProvider.php"/>
+      </errorLevel>
+    </InvalidOperand>
+
+    <DocblockTypeContradiction>
+      <errorLevel type="suppress">
+        <file name="src/Money.php"/>
+      </errorLevel>
+    </DocblockTypeContradiction>
+  </issueHandlers>
+
+  <plugins/>
+</psalm>
