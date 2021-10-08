@@ -1570,8 +1570,6 @@ final class Currency implements JsonSerializable
             self::$currencies[$currencyCode]['default_fraction_digits'],
             self::$currencies[$currencyCode]['sub_unit'],
             self::$currencies[$currencyCode]['sign'],
-            self::$currencies[$currencyCode]['pretty_print_format'],
-            self::$currencies[$currencyCode]['negative_pretty_print_format'],
             self::$currencies[$currencyCode]['deprecated'],
         ));
 
