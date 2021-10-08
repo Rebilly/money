@@ -44,6 +44,7 @@
   "suggest": {},
   "scripts": {
     "test-unit": "phpunit",
+    "show-coverage": "phpunit --coverage-text=php://stdout",
     "test-code": "psalm --threads=1 --no-cache --find-dead-code=always --show-info=false",
     "fix-cs": "php-cs-fixer fix --config=.php_cs -v --using-cache=no --ansi",
     "test-cs": "php-cs-fixer fix --dry-run --config=.php_cs -v --using-cache=no --ansi",
