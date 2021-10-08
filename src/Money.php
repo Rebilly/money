@@ -17,6 +17,8 @@ use UnderflowException;
  * @see http://www.github.com/sebastianbergmann/money
  * @see http://martinfowler.com/bliki/ValueObject.html
  * @see http://martinfowler.com/eaaCatalog/money.html
+ *
+ * @psalm-immutable
  */
 final class Money implements JsonSerializable
 {
@@ -195,9 +197,7 @@ final class Money implements JsonSerializable
      */
     public function add(self $other): self
     {
-        $this->assertSameCurrency($other);
-
-        $value = $this->getAmount() + $other->getAmount();
+        $value = $this->getAmount() + $this->castOtherAmountToInt($other);
 
         if (!is_int($value)) {
             throw new OverflowException('Value reached maximum amount');
@@ -219,9 +219,7 @@ final class Money implements JsonSerializable
      */
     public function subtract(self $other): self
     {
-        $this->assertSameCurrency($other);
-
-        $value = $this->getAmount() - $other->getAmount();
+        $value = $this->getAmount() - $this->castOtherAmountToInt($other);
 
         if (!is_int($value)) {
             throw new UnderflowException('Value reached minimum amount');
@@ -254,11 +252,7 @@ final class Money implements JsonSerializable
      */
     public function multiply(float $factor, int $roundingMode = PHP_ROUND_HALF_UP): self
     {
-        $this->assertRoundingMode($roundingMode);
-
-        $amount = round($factor * $this->getAmount(), 0, $roundingMode);
-
-        return $this->changeFloatAmount($amount);
+        return $this->changeFloatAmount($this->roundValueByMode($factor * $this->getAmount(), $roundingMode));
     }
 
     /**
@@ -342,12 +336,12 @@ final class Money implements JsonSerializable
      *
      * @see https://github.com/sebastianbergmann/money/issues/27
      *
-     * @param float $percentage
+     * @param float|int $percentage
      * @param int $roundingMode
      *
      * @return self[]
      */
-    public function extractPercentage($percentage, $roundingMode = PHP_ROUND_HALF_UP): array
+    public function extractPercentage($percentage, int $roundingMode = PHP_ROUND_HALF_UP): array
     {
         $amount = round($this->getAmount() / (100 + $percentage) * $percentage, 0, $roundingMode);
         $percentage = $this->changeFloatAmount($amount);
@@ -373,9 +367,7 @@ final class Money implements JsonSerializable
      */
     public function compareTo(self $other): int
     {
-        $this->assertSameCurrency($other);
-
-        return $this->getAmount() <=> $other->getAmount();
+        return $this->getAmount() <=> $this->castOtherAmountToInt($other);
     }
 
     /**
@@ -480,39 +472,41 @@ final class Money implements JsonSerializable
      * Convert currency to a target currency given a conversion rate and rounding mode.
      *
      * @param Currency $targetCurrency
-     * @param $conversionRate
-     * @param $roundingMode
+     * @param float $conversionRate
+     * @param int $roundingMode
      *
      * @return self
      */
     public function convert(Currency $targetCurrency, float $conversionRate, int $roundingMode): self
     {
-        $this->assertRoundingMode($roundingMode);
-
-        $targetAmount = $this->castToInt(round($conversionRate * $this->getAmount(), 0, $roundingMode));
-
-        return new self($targetAmount, $targetCurrency);
+        return new self(
+            $this->castToInt($this->roundValueByMode($conversionRate * $this->getAmount(), $roundingMode)),
+            $targetCurrency,
+        );
     }
 
     /**
-     * Asserts that rounding mode is a valid integer value.
-     *
+     * @param float|int $value
      * @param int $roundingMode
      *
-     * @throws InvalidArgumentException
+     * @return float
      */
-    private function assertRoundingMode(int $roundingMode): void
+    private function roundValueByMode($value, int $roundingMode): float
     {
         if (!in_array($roundingMode, self::ROUNDING_MODES, true)) {
             throw new InvalidArgumentException('$roundingMode must be a valid rounding mode (PHP_ROUND_*)');
         }
+
+        return round($value, 0, $roundingMode);
     }
 
-    private function assertSameCurrency(self $other): void
+    private function castOtherAmountToInt(self $amount): int
     {
-        if (!$this->getCurrency()->equals($other->getCurrency())) {
+        if (!$this->getCurrency()->equals($amount->getCurrency())) {
             throw new CurrencyMismatchException();
         }
+
+        return $amount->getAmount();
     }
 
     /**
