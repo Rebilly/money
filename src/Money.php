@@ -64,6 +64,8 @@ final class Money implements JsonSerializable
      * number of fractional digits then the value will be rounded to the
      * currency's number of fractional digits.
      *
+     * @psalm-pure
+     *
      * @param float|int|object|string $value
      * @param Currency|string $currency
      *

@@ -16,6 +16,8 @@ use JsonSerializable;
  * @psalm-type CurrencyAlpha2Code=string
  * @psalm-type CurrencyMetadata=array{display_name: string, numeric_code: int, default_fraction_digits: int, sub_unit: int, sign: string, deprecated: boolean}
  * @psalm-type CurrencyRegistry=array<CurrencyAlpha2Code, CurrencyMetadata>
+ *
+ * @psalm-immutable
  */
 final class Currency implements JsonSerializable
 {
@@ -1647,8 +1649,6 @@ final class Currency implements JsonSerializable
 
     /**
      * Returns the ISO 4217 currency code of this currency.
-     *
-     * @psalm-mutation-free
      */
     public function getCurrencyCode(): string
     {
@@ -1658,8 +1658,6 @@ final class Currency implements JsonSerializable
     /**
      * Returns the default number of fraction digits used with this
      * currency.
-     *
-     * @psalm-mutation-free
      */
     public function getDefaultFractionDigits(): int
     {
@@ -1668,8 +1666,6 @@ final class Currency implements JsonSerializable
 
     /**
      * Returns the name that is suitable for displaying this currency.
-     *
-     * @psalm-mutation-free
      */
     public function getDisplayName(): string
     {
@@ -1678,8 +1674,6 @@ final class Currency implements JsonSerializable
 
     /**
      * Returns the ISO 4217 numeric code of this currency.
-     *
-     * @psalm-mutation-free
      */
     public function getNumericCode(): int
     {
@@ -1688,8 +1682,6 @@ final class Currency implements JsonSerializable
 
     /**
      * Returns the minor currency sub units.
-     *
-     * @psalm-mutation-free
      */
     public function getSubUnit(): int
     {
@@ -1698,8 +1690,6 @@ final class Currency implements JsonSerializable
 
     /**
      * Returns the currency sign.
-     *
-     * @psalm-mutation-free
      */
     public function getSign(): string
     {
@@ -1708,8 +1698,6 @@ final class Currency implements JsonSerializable
 
     /**
      * Returns the deprecation status.
-     *
-     * @psalm-mutation-free
      */
     public function isDeprecated(): bool
     {
@@ -1718,17 +1706,12 @@ final class Currency implements JsonSerializable
 
     /**
      * {@inheritdoc}
-     *
-     * @psalm-mutation-free
      */
     public function jsonSerialize(): string
     {
         return $this->getCurrencyCode();
     }
 
-    /**
-     * @psalm-mutation-free
-     */
     public function equals(self $currency): bool
     {
         return $this->getCurrencyCode() === $currency->getCurrencyCode();
