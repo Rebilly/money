@@ -16,11 +16,12 @@ Security - in case of vulnerabilities.
 
 ## [Unreleased]
 
-## 1.3.0 (2022-02-09)
+## 2.0.0 (2022-02-09)
 
 ### Changed
 
 + Removed externally dependent `CurrencyPair::getRate()`.
++ PHP 7.3 is no longer supported.
 
 ## 1.2.1 (2021-10-08)
 
