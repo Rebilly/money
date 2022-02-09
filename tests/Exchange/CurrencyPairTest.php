@@ -86,7 +86,7 @@ class CurrencyPairTest extends TestCase
     public function testCanGetRate(CurrencyPair $c): void
     {
         $rateProvider = new InMemoryRateProvider(['EUR/USD' => 1.09], new DateTime());
-        $rate = $c->getRate($rateProvider);
+        $rate = $rateProvider->fetchRate($c);
 
         self::assertSame(1.09, $rate->getRatio());
     }

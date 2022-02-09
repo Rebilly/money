@@ -26,6 +26,8 @@ final class Rate implements JsonSerializable
     private $currencyPair;
 
     /**
+     * @psalm-mutation-free
+     *
      * @param CurrencyPair $currencyPair
      * @param DateTimeInterface $date
      * @param float $ratio
@@ -42,6 +44,8 @@ final class Rate implements JsonSerializable
     }
 
     /**
+     * @psalm-mutation-free
+     *
      * @return float
      */
     public function getRatio(): float
@@ -50,6 +54,8 @@ final class Rate implements JsonSerializable
     }
 
     /**
+     * @psalm-mutation-free
+     *
      * @return CurrencyPair
      */
     public function getCurrencyPair(): CurrencyPair
@@ -58,6 +64,8 @@ final class Rate implements JsonSerializable
     }
 
     /**
+     * @psalm-mutation-free
+     *
      * @return DateTimeInterface
      */
     public function getDate(): DateTimeInterface
@@ -67,6 +75,8 @@ final class Rate implements JsonSerializable
 
     /**
      * Convert Money from base currency to target currency.
+     *
+     * @psalm-mutation-free
      *
      * @param Money $money
      *
@@ -81,6 +91,9 @@ final class Rate implements JsonSerializable
         return $money->convert($this->currencyPair->getQuoteCurrency(), $this->ratio, PHP_ROUND_HALF_UP);
     }
 
+    /**
+     * @psalm-mutation-free
+     */
     public function withRatio(float $ratio): self
     {
         return new self($this->getCurrencyPair(), $this->getDate(), $ratio);

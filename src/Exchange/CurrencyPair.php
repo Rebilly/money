@@ -6,6 +6,9 @@ use InvalidArgumentException;
 use JsonSerializable;
 use Money\Currency;
 
+/**
+ * @psalm-immutable
+ */
 final class CurrencyPair implements JsonSerializable
 {
     /**
@@ -72,18 +75,6 @@ final class CurrencyPair implements JsonSerializable
     public function getInverse(): self
     {
         return new self($this->getQuoteCurrency(), $this->getBaseCurrency());
-    }
-
-    /**
-     * Return the Rate for a currency pair using a specified provider.
-     *
-     * @param RateProvider $provider
-     *
-     * @return Rate
-     */
-    public function getRate(RateProvider $provider): Rate
-    {
-        return $provider->fetchRate($this);
     }
 
     /**

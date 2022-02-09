@@ -16,6 +16,12 @@ Security - in case of vulnerabilities.
 
 ## [Unreleased]
 
+## 1.3.0 (2022-02-09)
+
+### Changed
+
++ Removed externally dependent `CurrencyPair::getRate()`.
+
 ## 1.2.1 (2021-10-08)
 
 ### Changed

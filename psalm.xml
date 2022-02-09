@@ -4,12 +4,13 @@
   xmlns="https://getpsalm.org/schema/config"
   xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
   usePhpDocMethodsWithoutMagicCall="true"
-  allowPhpStormGenerics="true"
   allowStringToStandInForClass="true"
   hoistConstants="true"
   cacheDirectory="./.cache-psalm"
   autoloader="vendor/autoload.php"
   findUnusedPsalmSuppress="true"
+  errorLevel="1"
+  totallyTyped="true"
 >
   <projectFiles>
     <directory name="src"/>
@@ -43,6 +44,12 @@
         <file name="src/Money.php"/>
       </errorLevel>
     </DocblockTypeContradiction>
+
+    <UnusedMethodCall>
+      <errorLevel type="suppress">
+        <directory name="tests"/>
+      </errorLevel>
+    </UnusedMethodCall>
   </issueHandlers>
 
   <plugins/>
