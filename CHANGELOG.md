@@ -16,7 +16,7 @@ Security - in case of vulnerabilities.
 
 ## [Unreleased]
 
-## 2.0.1 (2024-02-29)
+## 2.1.0 (2024-02-29)
 
 ### Changed
 
