@@ -16,6 +16,12 @@ Security - in case of vulnerabilities.
 
 ## [Unreleased]
 
+## 2.0.1 (2024-02-29)
+
+### Changed
+
++ Added `$withCurrencyCode` parameter to `Money::prettyPrint()` to render amount of money with currency code.
+
 ## 2.0.0 (2022-02-09)
 
 ### Changed
