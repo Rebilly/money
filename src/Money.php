@@ -164,16 +164,21 @@ final class Money implements JsonSerializable
      *
      * @param string $decimalPoint
      * @param string $thousandsSeparator
+     * @param bool $withCurrencyCode
      *
      * @return string
      */
-    public function getPrettyPrint(string $decimalPoint = '.', string $thousandsSeparator = ','): string
-    {
+    public function getPrettyPrint(
+        string $decimalPoint = '.',
+        string $thousandsSeparator = ',',
+        bool $withCurrencyCode = false
+    ): string {
         $currencySign = $this->getCurrency()->getSign();
         $formattedAmount = ltrim($this->getFormattedAmount($decimalPoint, $thousandsSeparator), '-');
         $amountSign = $this->isNegative() ? '-' : '';
+        $currencyCode = $withCurrencyCode ? " {$this->getCurrency()->getCurrencyCode()}" : '';
 
-        return "{$amountSign}{$currencySign}{$formattedAmount}";
+        return "{$amountSign}{$currencySign}{$formattedAmount}{$currencyCode}";
     }
 
     /**

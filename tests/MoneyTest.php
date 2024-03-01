@@ -143,6 +143,15 @@ class MoneyTest extends TestCase
         self::assertSame('-€1,200.34', $m->getPrettyPrint('.', ','));
     }
 
+    public function testFormattedAmountCanBeRetrievedWithCurrecyCode(): void
+    {
+        $m = new Money(120034, new Currency('EUR'));
+        self::assertSame(
+            '€1,200.34 EUR',
+            $m->getPrettyPrint('.', ',', true)
+        );
+    }
+
     /**
      * @depends testObjectCanBeConstructedFromIntegerValueAndCurrencyObject
      *
