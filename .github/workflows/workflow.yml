@@ -42,7 +42,7 @@ jobs:
             ${{ runner.os }}-composer-
 
       - name: Login composer
-        run: composer config -g github-oauth.github.com ${{ secrets.COMPOSER_TOKEN }}
+        run: composer config -g github-oauth.github.com ${{ secrets.MACHINE_USER_PAT }}
 
       - name: Install dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --no-suggest
@@ -95,7 +95,7 @@ jobs:
             ${{ runner.os }}-composer-
 
       - name: Login composer
-        run: composer config -g github-oauth.github.com ${{ secrets.COMPOSER_TOKEN }}
+        run: composer config -g github-oauth.github.com ${{ secrets.MACHINE_USER_PAT }}
 
       - name: Install dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --no-suggest
@@ -133,7 +133,7 @@ jobs:
             ${{ runner.os }}-composer-
 
       - name: Login composer
-        run: composer config -g github-oauth.github.com ${{ secrets.COMPOSER_TOKEN }}
+        run: composer config -g github-oauth.github.com ${{ secrets.MACHINE_USER_PAT }}
 
       - name: Install dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --no-suggest
