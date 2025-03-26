@@ -293,7 +293,7 @@ final class Currency implements JsonSerializable
             'display_name' => 'Chilean Peso',
             'numeric_code' => 152,
             'default_fraction_digits' => 0,
-            'sub_unit' => 0,
+            'sub_unit' => 1,
             'sign' => '$',
             'deprecated' => false,
         ],
