@@ -661,7 +661,7 @@ final class Currency implements JsonSerializable
             'display_name' => 'Won',
             'numeric_code' => 410,
             'default_fraction_digits' => 0,
-            'sub_unit' => 100,
+            'sub_unit' => 1,
             'sign' => '₩',
             'deprecated' => false,
         ],
