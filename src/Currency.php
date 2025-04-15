@@ -282,10 +282,10 @@ final class Currency implements JsonSerializable
             'deprecated' => false,
         ],
         'CLF' => [
-            'display_name' => 'Unidades de fomento',
+            'display_name' => 'Unidad de Fomento',
             'numeric_code' => 990,
-            'default_fraction_digits' => 0,
-            'sub_unit' => 100,
+            'default_fraction_digits' => 4,
+            'sub_unit' => 10000,
             'sign' => 'UF',
             'deprecated' => false,
         ],
