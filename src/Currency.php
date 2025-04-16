@@ -527,7 +527,7 @@ final class Currency implements JsonSerializable
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'kn',
-            'deprecated' => false,
+            'deprecated' => true,
         ],
         'HTG' => [
             'display_name' => 'Gourde',
@@ -1089,13 +1089,21 @@ final class Currency implements JsonSerializable
             'sign' => '£',
             'deprecated' => false,
         ],
+        'SLE' => [
+            'display_name' => 'Leone',
+            'numeric_code' => 925,
+            'default_fraction_digits' => 2,
+            'sub_unit' => 100,
+            'sign' => 'Le',
+            'deprecated' => false,
+        ],
         'SLL' => [
             'display_name' => 'Leone',
             'numeric_code' => 694,
             'default_fraction_digits' => 2,
             'sub_unit' => 100,
             'sign' => 'Le',
-            'deprecated' => false,
+            'deprecated' => true,
         ],
         'SOS' => [
             'display_name' => 'Somali Shilling',
